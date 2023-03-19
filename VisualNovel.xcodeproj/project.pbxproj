@@ -7,37 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490CDA6929C73B5E006C736D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CDA6829C73B5E006C736D /* SnapKit */; };
+		490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6A29C74961006C736D /* StartProtocols.swift */; };
+		490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6D29C74DE2006C736D /* WelcomeViewController.swift */; };
+		490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */; };
+		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
+		490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7329C74E11006C736D /* WelcomeProtocols.swift */; };
 		49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8C29C6EB7C00511526 /* AppDelegate.swift */; };
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
 		49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */; };
-		49375DA829C6FA1400511526 /* choices.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* choices.json */; };
-		49375DAA29C7048600511526 /* ChoiceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* ChoiceDTO.swift */; };
-		49375DAD29C705B700511526 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Choice.swift */; };
-		49375DAF29C7067200511526 /* ChoiceRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* ChoiceRepositoryImpl.swift */; };
-		49375DB229C706A500511526 /* ChoiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* ChoiceRepository.swift */; };
+		49375DA829C6FA1400511526 /* stages.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* stages.json */; };
+		49375DAA29C7048600511526 /* StageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* StageDTO.swift */; };
+		49375DAD29C705B700511526 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Stage.swift */; };
+		49375DAF29C7067200511526 /* StageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* StageRepositoryImpl.swift */; };
+		49375DB229C706A500511526 /* StageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* StageRepository.swift */; };
 		49375DB529C7187500511526 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB429C7187500511526 /* DependencyContainer.swift */; };
 		49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB729C7193400511526 /* RepositoryFactory.swift */; };
 		49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBC29C71CAD00511526 /* AppCoordinator.swift */; };
 		49375DC029C71CCF00511526 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBF29C71CCF00511526 /* StartViewController.swift */; };
+		49375DC229C71D2000511526 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC129C71D2000511526 /* StartViewModel.swift */; };
+		49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC529C71D4700511526 /* BaseCoordinator.swift */; };
+		49375DC829C71D5600511526 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC729C71D5600511526 /* Coordinator.swift */; };
+		49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC929C71F3900511526 /* CoordinatorFactory.swift */; };
+		49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* StartCoordinator.swift */; };
+		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490CDA6A29C74961006C736D /* StartProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartProtocols.swift; sourceTree = "<group>"; };
+		490CDA6D29C74DE2006C736D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
+		490CDA7329C74E11006C736D /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
 		49375D8929C6EB7C00511526 /* VisualNovel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualNovel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49375D8C29C6EB7C00511526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49375D8E29C6EB7C00511526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49375D9529C6EB7E00511526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49375D9829C6EB7E00511526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49375D9A29C6EB7E00511526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../../../../../../../../studyingIOS/project_IOS/VisualNovel/VisualNovel/Resources/Info.plist; sourceTree = BUILT_PRODUCTS_DIR; };
-		49375DA729C6FA1400511526 /* choices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = choices.json; sourceTree = "<group>"; };
-		49375DA929C7048600511526 /* ChoiceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDTO.swift; sourceTree = "<group>"; };
-		49375DAC29C705B700511526 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
-		49375DAE29C7067200511526 /* ChoiceRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceRepositoryImpl.swift; sourceTree = "<group>"; };
-		49375DB129C706A500511526 /* ChoiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceRepository.swift; sourceTree = "<group>"; };
+		49375DA729C6FA1400511526 /* stages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stages.json; sourceTree = "<group>"; };
+		49375DA929C7048600511526 /* StageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageDTO.swift; sourceTree = "<group>"; };
+		49375DAC29C705B700511526 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
+		49375DAE29C7067200511526 /* StageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepositoryImpl.swift; sourceTree = "<group>"; };
+		49375DB129C706A500511526 /* StageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepository.swift; sourceTree = "<group>"; };
 		49375DB429C7187500511526 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		49375DB729C7193400511526 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		49375DBC29C71CAD00511526 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		49375DBF29C71CCF00511526 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		49375DC129C71D2000511526 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		49375DC529C71D4700511526 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		49375DC729C71D5600511526 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		49375DC929C71F3900511526 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		49375DCB29C7218300511526 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
+		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +68,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CDA6929C73B5E006C736D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490CDA6C29C74DC7006C736D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				490CDA6D29C74DE2006C736D /* WelcomeViewController.swift */,
+				490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */,
+				490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */,
+				490CDA7329C74E11006C736D /* WelcomeProtocols.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		49375D8029C6EB7C00511526 = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +105,10 @@
 		49375D8B29C6EB7C00511526 /* VisualNovel */ = {
 			isa = PBXGroup;
 			children = (
+				49375DB329C7184500511526 /* DI */,
+				49375DC329C71D2700511526 /* Base */,
 				49375DBA29C71C9800511526 /* Scenes */,
 				49375DB929C71C8200511526 /* Application */,
-				49375DB329C7184500511526 /* DI */,
 				49375DAB29C705A700511526 /* Models */,
 				49375DA229C6F97200511526 /* Data */,
 				49375DA129C6F51600511526 /* Resources */,
@@ -86,7 +122,7 @@
 				49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */,
 				49375D9529C6EB7E00511526 /* Assets.xcassets */,
 				49375D9A29C6EB7E00511526 /* Info.plist */,
-				49375DA729C6FA1400511526 /* choices.json */,
+				49375DA729C6FA1400511526 /* stages.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -103,7 +139,7 @@
 		49375DA329C6F97A00511526 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				49375DB029C7068900511526 /* ChoiceRepository */,
+				49375DB029C7068900511526 /* StageRepository */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -111,7 +147,7 @@
 		49375DA429C6F97F00511526 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				49375DA929C7048600511526 /* ChoiceDTO.swift */,
+				49375DA929C7048600511526 /* StageDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -119,18 +155,18 @@
 		49375DAB29C705A700511526 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				49375DAC29C705B700511526 /* Choice.swift */,
+				49375DAC29C705B700511526 /* Stage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		49375DB029C7068900511526 /* ChoiceRepository */ = {
+		49375DB029C7068900511526 /* StageRepository */ = {
 			isa = PBXGroup;
 			children = (
-				49375DAE29C7067200511526 /* ChoiceRepositoryImpl.swift */,
-				49375DB129C706A500511526 /* ChoiceRepository.swift */,
+				49375DAE29C7067200511526 /* StageRepositoryImpl.swift */,
+				49375DB129C706A500511526 /* StageRepository.swift */,
 			);
-			path = ChoiceRepository;
+			path = StageRepository;
 			sourceTree = "<group>";
 		};
 		49375DB329C7184500511526 /* DI */ = {
@@ -146,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				49375DB729C7193400511526 /* RepositoryFactory.swift */,
+				49375DC929C71F3900511526 /* CoordinatorFactory.swift */,
+				49375DCD29C722A300511526 /* ViewModelFactory.swift */,
 			);
 			path = FactoryProtocols;
 			sourceTree = "<group>";
@@ -164,6 +202,7 @@
 			children = (
 				49375DBC29C71CAD00511526 /* AppCoordinator.swift */,
 				49375DBB29C71C9D00511526 /* Start */,
+				490CDA6C29C74DC7006C736D /* Welcome */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -172,8 +211,28 @@
 			isa = PBXGroup;
 			children = (
 				49375DBF29C71CCF00511526 /* StartViewController.swift */,
+				49375DC129C71D2000511526 /* StartViewModel.swift */,
+				49375DCB29C7218300511526 /* StartCoordinator.swift */,
+				490CDA6A29C74961006C736D /* StartProtocols.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		49375DC329C71D2700511526 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				49375DC429C71D2D00511526 /* Coordinator */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		49375DC429C71D2D00511526 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				49375DC529C71D4700511526 /* BaseCoordinator.swift */,
+				49375DC729C71D5600511526 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +251,9 @@
 			dependencies = (
 			);
 			name = VisualNovel;
+			packageProductDependencies = (
+				490CDA6829C73B5E006C736D /* SnapKit */,
+			);
 			productName = VisualNovel;
 			productReference = 49375D8929C6EB7C00511526 /* VisualNovel.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +282,9 @@
 				Base,
 			);
 			mainGroup = 49375D8029C6EB7C00511526;
+			packageReferences = (
+				490CDA6729C73B5E006C736D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 49375D8A29C6EB7C00511526 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */,
-				49375DA829C6FA1400511526 /* choices.json in Resources */,
+				49375DA829C6FA1400511526 /* stages.json in Resources */,
 				49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,16 +312,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49375DB229C706A500511526 /* ChoiceRepository.swift in Sources */,
-				49375DAD29C705B700511526 /* Choice.swift in Sources */,
+				490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */,
+				49375DB229C706A500511526 /* StageRepository.swift in Sources */,
+				49375DAD29C705B700511526 /* Stage.swift in Sources */,
+				49375DC829C71D5600511526 /* Coordinator.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
-				49375DAF29C7067200511526 /* ChoiceRepositoryImpl.swift in Sources */,
+				49375DAF29C7067200511526 /* StageRepositoryImpl.swift in Sources */,
+				49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */,
+				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
 				49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */,
 				49375DC029C71CCF00511526 /* StartViewController.swift in Sources */,
-				49375DAA29C7048600511526 /* ChoiceDTO.swift in Sources */,
+				490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */,
+				49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */,
+				490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */,
+				49375DAA29C7048600511526 /* StageDTO.swift in Sources */,
+				49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */,
+				49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */,
 				49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */,
 				49375DB529C7187500511526 /* DependencyContainer.swift in Sources */,
 				49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */,
+				490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */,
+				49375DC229C71D2000511526 /* StartViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +542,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		490CDA6729C73B5E006C736D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit?ysclid=ldhh9l9d77943341286#installation";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		490CDA6829C73B5E006C736D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490CDA6729C73B5E006C736D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49375D8129C6EB7C00511526 /* Project object */;
 }

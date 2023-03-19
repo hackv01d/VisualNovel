@@ -1,5 +1,5 @@
 //
-//  Choice.swift
+//  Stage.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Choice {
+struct Stage {
     let id: Int
     let header: String
     let options: [Option]

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ChoiceRepositoryFactory {
-    func makeChoiceRepository() -> ChoiceRepository
+protocol StageRepositoryFactory {
+    func makeStageRepository() -> StageRepository
 }
