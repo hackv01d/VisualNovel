@@ -1,5 +1,5 @@
 //
-//  Stage.swift
+//  Scene.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Stage {
+struct Scene {
     let id: Int
-    var header: String
-    let options: [Option]
+    var prompt: String
+    let choices: [Choice]
     var userName: String?
 }
 
-struct Option {
+struct Choice {
     let id: Int
     let title: String
 }

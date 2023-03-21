@@ -14,9 +14,9 @@ final class StartCoordinator: BaseCoordinator {
     private let factory: Factory
     private let startViewModel: StartViewModel
     
-    init(navigationController: UINavigationController, factory: Factory, stageId: Int = 1) {
+    init(navigationController: UINavigationController, factory: Factory, sceneId: Int = 1) {
         self.factory = factory
-        startViewModel = factory.makeStartViewModel(stageId: stageId)
+        startViewModel = factory.makeStartViewModel(sceneId: sceneId)
         super.init(navigationController: navigationController)
     }
     
@@ -31,8 +31,8 @@ final class StartCoordinator: BaseCoordinator {
 // MARK: - Navigation
 
 extension StartCoordinator {
-    func showWelcomeScene(with stageId: Int) {
-        let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, stageId: stageId)
+    func showWelcomeScene(with sceneId: Int) {
+        let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, sceneId: sceneId)
         coordinate(to: welcomeCoordinator)
     }
 }
@@ -41,8 +41,8 @@ extension StartCoordinator {
 
 private extension StartCoordinator {
     func setupBindings() {
-        startViewModel.didGoToNextScreen = { [weak self] stageId in
-            self?.showWelcomeScene(with: stageId)
+        startViewModel.didGoToNextScreen = { [weak self] sceneId in
+            self?.showWelcomeScene(with: sceneId)
         }
     }
 }

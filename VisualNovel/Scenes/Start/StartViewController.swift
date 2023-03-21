@@ -10,7 +10,7 @@ import SnapKit
 
 class StartViewController: UIViewController {
     
-    private let headerLabel = UILabel()
+    private let promptLabel = UILabel()
     private let continueButton = UIButton(type: .system)
     
     private var viewModel: StartViewModelType
@@ -24,12 +24,13 @@ class StartViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         bindViewModel()
-        viewModel.getStageDetail()
+        viewModel.getSceneDetail()
     }
     
     @objc
@@ -39,7 +40,7 @@ class StartViewController: UIViewController {
     
     private func setup() {
         setupSuperView()
-        setupHeaderLabel()
+        setupPromptLabel()
         setupContinueButton()
     }
     
@@ -47,16 +48,16 @@ class StartViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    private func setupHeaderLabel() {
-        view.addSubview(headerLabel)
+    private func setupPromptLabel() {
+        view.addSubview(promptLabel)
         
-        headerLabel.textColor = .white
-        headerLabel.font = UIFont.systemFont(ofSize: 40)
-        headerLabel.textAlignment = .center
-        headerLabel.numberOfLines = 0
-        headerLabel.backgroundColor = .black
+        promptLabel.textColor = .white
+        promptLabel.font = .scenePrompt
+        promptLabel.textAlignment = .center
+        promptLabel.numberOfLines = 0
+        promptLabel.backgroundColor = .black
         
-        headerLabel.snp.makeConstraints { make in
+        promptLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(view.bounds.height * 0.25)
             make.height.equalToSuperview().multipliedBy(0.2)
             make.width.equalToSuperview()
@@ -68,21 +69,21 @@ class StartViewController: UIViewController {
         
         continueButton.setTitleColor(.white, for: .normal)
         continueButton.backgroundColor = .black
-        continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        continueButton.titleLabel?.font = .sceneTitle
         continueButton.addTarget(self, action: #selector(handleContinueButton), for: .touchUpInside)
         
         continueButton.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.width.equalToSuperview()
-            make.top.equalTo(headerLabel.snp.bottom).offset(view.bounds.height * 0.25)
+            make.top.equalTo(promptLabel.snp.bottom).offset(view.bounds.height * 0.25)
         }
     }
 }
 
 private extension StartViewController {
     func bindViewModel() {
-        viewModel.didUpdateHeader = { [weak self] header in
-            self?.headerLabel.text = header
+        viewModel.didUpdatePrompt = { [weak self] prompt in
+            self?.promptLabel.text = prompt
         }
         
         viewModel.didUpdateTitle = { [weak self] title in

@@ -14,9 +14,9 @@ final class WelcomeCoordinator: BaseCoordinator {
     private let factory: Factory
     private let welcomeViewModel: WelcomeViewModel
     
-    init(navigationController: UINavigationController, factory: Factory, stageId: Int) {
+    init(navigationController: UINavigationController, factory: Factory, sceneId: Int) {
         self.factory = factory
-        welcomeViewModel = factory.makeWelcomeViewModel(stageId: stageId)
+        welcomeViewModel = factory.makeWelcomeViewModel(sceneId: sceneId)
         super.init(navigationController: navigationController)
     }
     
@@ -32,8 +32,8 @@ final class WelcomeCoordinator: BaseCoordinator {
 // MARK: - Navigation 
 
 extension WelcomeCoordinator {
-    func showGameScene(for stageId: Int) {
-        let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController, stageId: stageId)
+    func showGameScene(for sceneId: Int) {
+        let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController, sceneId: sceneId)
         coordinate(to: gameCoordinator)
     }
 }
@@ -42,8 +42,8 @@ extension WelcomeCoordinator {
 
 private extension WelcomeCoordinator {
     func setupBindings() {
-        welcomeViewModel.didGoToGameScreen = { [weak self] stageId in
-            self?.showGameScene(for: stageId)
+        welcomeViewModel.didGoToGameScreen = { [weak self] sceneId in
+            self?.showGameScene(for: sceneId)
         }
     }
 }

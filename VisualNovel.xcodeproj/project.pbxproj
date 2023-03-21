@@ -13,16 +13,16 @@
 		490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */; };
 		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
 		490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7329C74E11006C736D /* WelcomeProtocols.swift */; };
-		490CDA7629C7677A006C736D /* StageRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* StageRepositoryError.swift */; };
+		490CDA7629C7677A006C736D /* SceneRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* SceneRepositoryError.swift */; };
 		49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8C29C6EB7C00511526 /* AppDelegate.swift */; };
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
 		49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */; };
-		49375DA829C6FA1400511526 /* stages.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* stages.json */; };
-		49375DAA29C7048600511526 /* StageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* StageDTO.swift */; };
-		49375DAD29C705B700511526 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Stage.swift */; };
-		49375DAF29C7067200511526 /* StageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* StageRepositoryImpl.swift */; };
-		49375DB229C706A500511526 /* StageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* StageRepository.swift */; };
+		49375DA829C6FA1400511526 /* scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* scenes.json */; };
+		49375DAA29C7048600511526 /* SceneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* SceneDTO.swift */; };
+		49375DAD29C705B700511526 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Scene.swift */; };
+		49375DAF29C7067200511526 /* SceneRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */; };
+		49375DB229C706A500511526 /* SceneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* SceneRepository.swift */; };
 		49375DB529C7187500511526 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB429C7187500511526 /* DependencyContainer.swift */; };
 		49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB729C7193400511526 /* RepositoryFactory.swift */; };
 		49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBC29C71CAD00511526 /* AppCoordinator.swift */; };
@@ -37,6 +37,9 @@
 		49E5271C29C8377100A9EDAF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271B29C8377100A9EDAF /* GameViewModel.swift */; };
 		49FBB20829C959D5004B655A /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20729C959D5004B655A /* GameCoordinator.swift */; };
 		49FBB20A29C95A73004B655A /* GameProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20929C95A73004B655A /* GameProtocols.swift */; };
+		49FBB20D29C99AE8004B655A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20C29C99AE8004B655A /* String+Extensions.swift */; };
+		49FBB20F29C9A4B3004B655A /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20E29C9A4B3004B655A /* UIColor+AppColors.swift */; };
+		49FBB21129C9A4BE004B655A /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB21029C9A4BE004B655A /* UIFont+AppFonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,18 +48,18 @@
 		490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		490CDA7329C74E11006C736D /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
-		490CDA7529C7677A006C736D /* StageRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepositoryError.swift; sourceTree = "<group>"; };
+		490CDA7529C7677A006C736D /* SceneRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepositoryError.swift; sourceTree = "<group>"; };
 		49375D8929C6EB7C00511526 /* VisualNovel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualNovel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49375D8C29C6EB7C00511526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49375D8E29C6EB7C00511526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49375D9529C6EB7E00511526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49375D9829C6EB7E00511526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49375D9A29C6EB7E00511526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../../../../../../../../studyingIOS/project_IOS/VisualNovel/VisualNovel/Resources/Info.plist; sourceTree = BUILT_PRODUCTS_DIR; };
-		49375DA729C6FA1400511526 /* stages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stages.json; sourceTree = "<group>"; };
-		49375DA929C7048600511526 /* StageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageDTO.swift; sourceTree = "<group>"; };
-		49375DAC29C705B700511526 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
-		49375DAE29C7067200511526 /* StageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepositoryImpl.swift; sourceTree = "<group>"; };
-		49375DB129C706A500511526 /* StageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepository.swift; sourceTree = "<group>"; };
+		49375DA729C6FA1400511526 /* scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes.json; sourceTree = "<group>"; };
+		49375DA929C7048600511526 /* SceneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDTO.swift; sourceTree = "<group>"; };
+		49375DAC29C705B700511526 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepositoryImpl.swift; sourceTree = "<group>"; };
+		49375DB129C706A500511526 /* SceneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepository.swift; sourceTree = "<group>"; };
 		49375DB429C7187500511526 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		49375DB729C7193400511526 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		49375DBC29C71CAD00511526 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 		49E5271B29C8377100A9EDAF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		49FBB20729C959D5004B655A /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		49FBB20929C95A73004B655A /* GameProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocols.swift; sourceTree = "<group>"; };
+		49FBB20C29C99AE8004B655A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		49FBB20E29C9A4B3004B655A /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		49FBB21029C9A4BE004B655A /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 		49375D8B29C6EB7C00511526 /* VisualNovel */ = {
 			isa = PBXGroup;
 			children = (
+				49FBB21229C9F532004B655A /* ViewComponents */,
+				49FBB20B29C99AB7004B655A /* Extensions */,
 				49375DB329C7184500511526 /* DI */,
 				49375DC329C71D2700511526 /* Base */,
 				49375DBA29C71C9800511526 /* Scenes */,
@@ -132,7 +140,7 @@
 				49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */,
 				49375D9529C6EB7E00511526 /* Assets.xcassets */,
 				49375D9A29C6EB7E00511526 /* Info.plist */,
-				49375DA729C6FA1400511526 /* stages.json */,
+				49375DA729C6FA1400511526 /* scenes.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,7 +165,7 @@
 		49375DA429C6F97F00511526 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				49375DA929C7048600511526 /* StageDTO.swift */,
+				49375DA929C7048600511526 /* SceneDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -165,7 +173,7 @@
 		49375DAB29C705A700511526 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				49375DAC29C705B700511526 /* Stage.swift */,
+				49375DAC29C705B700511526 /* Scene.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,9 +181,9 @@
 		49375DB029C7068900511526 /* StageRepository */ = {
 			isa = PBXGroup;
 			children = (
-				49375DAE29C7067200511526 /* StageRepositoryImpl.swift */,
-				49375DB129C706A500511526 /* StageRepository.swift */,
-				490CDA7529C7677A006C736D /* StageRepositoryError.swift */,
+				49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */,
+				49375DB129C706A500511526 /* SceneRepository.swift */,
+				490CDA7529C7677A006C736D /* SceneRepositoryError.swift */,
 			);
 			path = StageRepository;
 			sourceTree = "<group>";
@@ -258,6 +266,23 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		49FBB20B29C99AB7004B655A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49FBB20C29C99AE8004B655A /* String+Extensions.swift */,
+				49FBB20E29C9A4B3004B655A /* UIColor+AppColors.swift */,
+				49FBB21029C9A4BE004B655A /* UIFont+AppFonts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49FBB21229C9F532004B655A /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */,
-				49375DA829C6FA1400511526 /* stages.json in Resources */,
+				49375DA829C6FA1400511526 /* scenes.json in Resources */,
 				49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,15 +361,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */,
+				49FBB21129C9A4BE004B655A /* UIFont+AppFonts.swift in Sources */,
 				49FBB20829C959D5004B655A /* GameCoordinator.swift in Sources */,
-				49375DB229C706A500511526 /* StageRepository.swift in Sources */,
-				49375DAD29C705B700511526 /* Stage.swift in Sources */,
+				49375DB229C706A500511526 /* SceneRepository.swift in Sources */,
+				49375DAD29C705B700511526 /* Scene.swift in Sources */,
 				49375DC829C71D5600511526 /* Coordinator.swift in Sources */,
+				49FBB20F29C9A4B3004B655A /* UIColor+AppColors.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
-				49375DAF29C7067200511526 /* StageRepositoryImpl.swift in Sources */,
+				49375DAF29C7067200511526 /* SceneRepositoryImpl.swift in Sources */,
 				49FBB20A29C95A73004B655A /* GameProtocols.swift in Sources */,
 				49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */,
-				490CDA7629C7677A006C736D /* StageRepositoryError.swift in Sources */,
+				490CDA7629C7677A006C736D /* SceneRepositoryError.swift in Sources */,
+				49FBB20D29C99AE8004B655A /* String+Extensions.swift in Sources */,
 				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
 				49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */,
 				49375DC029C71CCF00511526 /* StartViewController.swift in Sources */,
@@ -353,7 +381,7 @@
 				49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */,
 				490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */,
 				49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */,
-				49375DAA29C7048600511526 /* StageDTO.swift in Sources */,
+				49375DAA29C7048600511526 /* SceneDTO.swift in Sources */,
 				49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */,
 				49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */,
 				49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */,

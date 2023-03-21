@@ -9,50 +9,50 @@ import Foundation
 
 final class StartViewModel {
     
-    var didUpdateHeader: ((String?) -> Void)?
+    var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     var didGoToNextScreen: ((Int) -> Void)?
     
-    typealias Factory = StageRepositoryFactory
+    typealias Factory = SceneRepositoryFactory
     
     private let factory: Factory
-    private lazy var stageRepository = factory.makeStageRepository()
+    private lazy var sceneRepository = factory.makeSceneRepository()
     
-    private let stageId: Int
-    private var stage: Stage? {
+    private let sceneId: Int
+    private var scene: Scene? {
         didSet {
             updateDetail()
         }
     }
     
-    init(factory: Factory, stageId: Int) {
+    init(factory: Factory, sceneId: Int) {
         self.factory = factory
-        self.stageId = stageId
+        self.sceneId = sceneId
     }
 }
 
 extension StartViewModel: StartViewModelType {
-    func getStageDetail() {
-        loadStage()
+    func getSceneDetail() {
+        loadScene()
     }
     
     func moveOn() {
-        guard let stageId = stage?.options[0].id else { return }
-        didGoToNextScreen?(stageId)
+        guard let sceneId = scene?.choices.first?.id else { return }
+        didGoToNextScreen?(sceneId)
     }
 }
 
 private extension StartViewModel {
     func updateDetail() {
-        didUpdateHeader?(stage?.header)
-        didUpdateTitle?(stage?.options[0].title)
+        didUpdatePrompt?(scene?.prompt)
+        didUpdateTitle?(scene?.choices.first?.title)
     }
     
-    func loadStage() {
-        stageRepository.getStage(for: stageId) { result in
+    func loadScene() {
+        sceneRepository.getScene(for: sceneId) { result in
             switch result {
-            case .success(let stage):
-                self.stage = stage
+            case .success(let scene):
+                self.scene = scene
             case .failure(let error):
                 print(error.description)
             }

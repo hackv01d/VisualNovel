@@ -8,10 +8,10 @@
 import Foundation
 
 protocol StartViewModelType {
-    var didUpdateHeader: ((String?) -> Void)? { get set }
+    var didUpdatePrompt: ((String?) -> Void)? { get set }
     var didUpdateTitle: ((String?) -> Void)? { get set }
     
-    func getStageDetail()
+    func getSceneDetail()
     func moveOn()
 }
 

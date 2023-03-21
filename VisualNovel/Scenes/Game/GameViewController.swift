@@ -8,6 +8,20 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    private let promptLabel = UILabel()
+    private let choicesStackView = UIStackView()
+    
+    private enum Constants {
+        enum PromptLabel {
+            static let height: CGFloat = 50
+            static let insetBottom: CGFloat = 25
+        }
+        
+        enum ChoicesStackView {
+//            static let spacing:
+        }
+    }
 
     private var viewModel: GameViewModelType
     
@@ -25,23 +39,68 @@ class GameViewController: UIViewController {
 
         setup()
         bindViewModel()
-        viewModel.getStageDetail()
+        viewModel.getSceneDetail()
+    }
+    
+    private func createChoiceButton(with title: String, and tag: Int) -> UIButton {
+        let button = UIButton()
+//        butto
+        button.backgroundColor = .black
+        button.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
+        return button
     }
     
     private func setup() {
         setupSuperView()
+        setupPromptLabel()
+        setupChoicesStackView()
     }
     
     private func setupSuperView() {
-        view.backgroundColor = .red
+        view.backgroundColor = .systemIndigo
     }
+    
+    private func setupPromptLabel() {
+        view.addSubview(promptLabel)
+        
+        promptLabel.textColor = .white
+        promptLabel.backgroundColor = .black
+        promptLabel.textAlignment = .center
+        promptLabel.font = .sceneTitle
+        promptLabel.adjustsFontSizeToFitWidth = true
+        
+        promptLabel.snp.makeConstraints { make in
+            make.height.equalTo(Constants.PromptLabel.height)
+            make.width.equalToSuperview()
+            make.top.equalToSuperview().offset(300)
+        }
+    }
+    
+    private func setupChoicesStackView() {
+        view.addSubview(choicesStackView)
+        
+        choicesStackView.axis = .vertical
+        choicesStackView.spacing = 20
+        
+        for _ in 1...3 {
+//            choicesStackView.addArrangedSubview()
+        }
+        
+//        choicesStackView.arrangedSubviews[0].t
+        
+        choicesStackView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
 
 }
 
 private extension GameViewController {
     func bindViewModel() {
-        viewModel.didUpdateHeader = { [weak self] header in
-            print(header)
+        viewModel.didUpdatePrompt = { [weak self] prompt in
+            self?.promptLabel.text = prompt
         }
         
         viewModel.didUpdateTitle = { [weak self] title in

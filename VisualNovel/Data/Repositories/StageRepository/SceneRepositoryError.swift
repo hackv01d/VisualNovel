@@ -1,5 +1,5 @@
 //
-//  StageRepositoryError.swift
+//  SceneRepositoryError.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-enum StageRepositoryError: Error {
-    case failedLoadData, failedReceiptStage
+enum SceneRepositoryError: Error {
+    case failedLoadData, failedReceiptScene
     
     var description: String {
         switch self {
         case .failedLoadData:
             return "Failed load data"
-        case .failedReceiptStage:
-            return "Failed receipt stage"
+        case .failedReceiptScene:
+            return "Failed receipt scene"
         }
     }
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 protocol StartViewModelFactory {
-    func makeStartViewModel(stageId: Int) -> StartViewModel
+    func makeStartViewModel(sceneId: Int) -> StartViewModel
 }
 
 protocol WelcomeViewModelFactory {
-    func makeWelcomeViewModel(stageId: Int) -> WelcomeViewModel
+    func makeWelcomeViewModel(sceneId: Int) -> WelcomeViewModel
 }
 
 protocol GameViewModelFactory {
-    func makeGameViewModel(stageId: Int) -> GameViewModel
+    func makeGameViewModel(sceneId: Int) -> GameViewModel
 }

@@ -8,47 +8,45 @@
 import Foundation
 
 final class GameViewModel {
-    typealias Factory = StageRepositoryFactory
+    typealias Factory = SceneRepositoryFactory
     
-    var didUpdateHeader: ((String?) -> Void)?
+    var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     
     private let factory: Factory
-    private lazy var stageRepository = factory.makeStageRepository()
+    private lazy var sceneRepository = factory.makeSceneRepository()
     
-    private let stageId: Int
-    private var stage: Stage? {
+    private let sceneId: Int
+    private var scene: Scene? {
         didSet {
             updateDetail()
         }
     }
     
-    init(factory: Factory, stageId: Int) {
+    init(factory: Factory, sceneId: Int) {
         self.factory = factory
-        self.stageId = stageId
+        self.sceneId = sceneId
     }
 }
 
 extension GameViewModel: GameViewModelType {
-    func getStageDetail() {
-        loadStage()
+    func getSceneDetail() {
+        loadScene()
     }
 }
 
 private extension GameViewModel {
     func updateDetail() {
-        guard let header = stage?.header else { return }
-        print(header)
-//        header = header.replacingOccurrences(of: "<>", with: userName ?? "")
-//        didUpdateHeader?(header)
+        didUpdatePrompt?(scene?.prompt)
+        scene?.choices.forEach { print($0.title) }
 //        didUpdateTitle?()
     }
     
-    func loadStage() {
-        stageRepository.getStage(for: stageId) { result in
+    func loadScene() {
+        sceneRepository.getScene(for: sceneId) { result in
             switch result {
-            case .success(let stage):
-                self.stage = stage
+            case .success(let scene):
+                self.scene = scene
             case .failure(let error):
                 print(error.description)
             }

@@ -11,7 +11,7 @@ import SnapKit
 class WelcomeViewController: UIViewController {
     
     private enum Constants {
-            enum HeaderLabel {
+            enum PromptLabel {
                 static let height: CGFloat = 50
                 static let insetBottom: CGFloat = -50
             }
@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
             }
     }
     
-    private let headerLabel = UILabel()
+    private let promptLabel = UILabel()
     private let userNameTextField = UITextField()
     private let confirmButton = UIButton(type: .system)
     private var userNameTextFieldBottomConstraint: Constraint?
@@ -49,7 +49,7 @@ class WelcomeViewController: UIViewController {
         
         setup()
         bindViewModel()
-        viewModel.getStageDetail()
+        viewModel.getSceneDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,7 +111,7 @@ class WelcomeViewController: UIViewController {
         setupSuperView()
         setupConfirmButton()
         setupUserNameTextField()
-        setupHeaderLabel()
+        setupPromptLabel()
     }
     
     private func setupSuperView() {
@@ -151,20 +151,19 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    private func setupHeaderLabel() {
-        view.addSubview(headerLabel)
+    private func setupPromptLabel() {
+        view.addSubview(promptLabel)
         
-        headerLabel.textColor = .white
-        headerLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        headerLabel.textAlignment = .center
-        headerLabel.numberOfLines = 1
-        headerLabel.backgroundColor = .black
-        headerLabel.adjustsFontSizeToFitWidth = true
+        promptLabel.textColor = .white
+        promptLabel.font = .sceneTitle
+        promptLabel.textAlignment = .center
+        promptLabel.backgroundColor = .black
+        promptLabel.adjustsFontSizeToFitWidth = true
         
-        headerLabel.snp.makeConstraints { make in
-            make.height.equalTo(Constants.HeaderLabel.height)
+        promptLabel.snp.makeConstraints { make in
+            make.height.equalTo(Constants.PromptLabel.height)
             make.width.equalToSuperview()
-            make.bottom.equalTo(userNameTextField.snp.top).offset(Constants.HeaderLabel.insetBottom)
+            make.bottom.equalTo(userNameTextField.snp.top).offset(Constants.PromptLabel.insetBottom)
         }
     }
 }
@@ -182,8 +181,8 @@ extension WelcomeViewController: UITextFieldDelegate {
 
 private extension WelcomeViewController {
     func bindViewModel() {
-        viewModel.didUpdateHeader = { [weak self] header in
-            self?.headerLabel.text = header
+        viewModel.didUpdatePrompt = { [weak self] prompt in
+            self?.promptLabel.text = prompt
         }
         
         viewModel.didUpdateTitle = { [weak self] title in

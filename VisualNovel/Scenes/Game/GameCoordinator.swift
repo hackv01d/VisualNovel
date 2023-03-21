@@ -14,9 +14,9 @@ final class GameCoordinator: BaseCoordinator {
     private let factory: Factory
     private let gameViewModel: GameViewModel
     
-    init(navigationController: UINavigationController, factory: Factory, stageId: Int) {
+    init(navigationController: UINavigationController, factory: Factory, sceneId: Int) {
         self.factory = factory
-        gameViewModel = factory.makeGameViewModel(stageId: stageId)
+        gameViewModel = factory.makeGameViewModel(sceneId: sceneId)
         super.init(navigationController: navigationController)
     }
     
