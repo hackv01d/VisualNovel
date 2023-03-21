@@ -12,4 +12,5 @@ protocol CoordinatorFactory {
     func makeAppCoordinator(window: UIWindow) -> AppCoordinator
     func makeStartCoordinator(navigationController: UINavigationController) -> StartCoordinator
     func makeWelcomeCoordinator(navigationController: UINavigationController, stageId: Int) -> WelcomeCoordinator
+    func makeGameCoordinator(navigationController: UINavigationController, stageId: Int) -> GameCoordinator
 }

@@ -21,8 +21,29 @@ final class WelcomeCoordinator: BaseCoordinator {
     }
     
     override func start() {
+        setupBindings()
+        
         let viewController = WelcomeViewController(with: welcomeViewModel)
         navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - Navigation 
+
+extension WelcomeCoordinator {
+    func showGameScene(for stageId: Int) {
+        let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController, stageId: stageId)
+        coordinate(to: gameCoordinator)
+    }
+}
+
+// MARK: - Bindings
+
+private extension WelcomeCoordinator {
+    func setupBindings() {
+        welcomeViewModel.didGoToGameScreen = { [weak self] stageId in
+            self?.showGameScene(for: stageId)
+        }
     }
 }

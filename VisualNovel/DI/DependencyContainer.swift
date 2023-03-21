@@ -36,6 +36,14 @@ extension DependencyContainer: WelcomeViewModelFactory {
     }
 }
 
+// MARK: - GameViewModelFactory
+
+extension DependencyContainer: GameViewModelFactory {
+    func makeGameViewModel(stageId: Int) -> GameViewModel {
+        return GameViewModel(factory: self, stageId: stageId)
+    }
+}
+
 // MARK: - CoordinatorFactory
 
 extension DependencyContainer: CoordinatorFactory {
@@ -49,5 +57,9 @@ extension DependencyContainer: CoordinatorFactory {
     
     func makeWelcomeCoordinator(navigationController: UINavigationController, stageId: Int) -> WelcomeCoordinator {
         return WelcomeCoordinator(navigationController: navigationController, factory: self, stageId: stageId)
+    }
+    
+    func makeGameCoordinator(navigationController: UINavigationController, stageId: Int) -> GameCoordinator {
+        return GameCoordinator(navigationController: navigationController, factory: self, stageId: stageId)
     }
 }

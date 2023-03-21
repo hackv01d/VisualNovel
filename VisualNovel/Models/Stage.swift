@@ -9,8 +9,9 @@ import Foundation
 
 struct Stage {
     let id: Int
-    let header: String
+    var header: String
     let options: [Option]
+    var userName: String?
 }
 
 struct Option {

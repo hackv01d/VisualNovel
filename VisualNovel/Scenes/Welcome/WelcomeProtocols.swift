@@ -14,5 +14,5 @@ protocol WelcomeViewModelType {
     
     func getStageDetail()
     func checkLengthValid(_ name: String?)
-    func saveUserName(name: String?)
+    func startGame(with userName: String?)
 }

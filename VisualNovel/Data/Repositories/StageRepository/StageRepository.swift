@@ -8,6 +8,7 @@
 import Foundation
 
 protocol StageRepository {
+    func updateWelcomeStage(with stageId: Int, userName: String?)
     func getStage(for stageId: Int, completion: (Result<Stage, StageRepositoryError>) -> Void)
 }
 

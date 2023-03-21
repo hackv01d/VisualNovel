@@ -13,6 +13,7 @@ final class WelcomeViewModel {
     var didUpdateHeader: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     var didUpdateName: ((String) -> Void)?
+    var didGoToGameScreen: ((Int) -> Void)?
     
     private let factory: Factory
     private lazy var stageRepository = factory.makeStageRepository()
@@ -35,13 +36,17 @@ extension WelcomeViewModel: WelcomeViewModelType {
         loadStage()
     }
     
-    func saveUserName(name: String?) {
-        print(name)
+    func startGame(with userName: String?) {
+        guard let userName = userName else { return }
+        guard let stageId = stage?.options[0].id else { return }
+        
+        stageRepository.updateWelcomeStage(with: stageId, userName: userName)
+        didGoToGameScreen?(stageId)
     }
     
     func checkLengthValid(_ name: String?) {
         guard var name = name else { return }
-        guard name.count > 30 else { return }
+        guard name.count > 40 else { return }
         
         name.removeLast()
         didUpdateName?(name)

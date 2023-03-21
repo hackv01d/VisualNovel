@@ -12,7 +12,6 @@ final class StartCoordinator: BaseCoordinator {
     typealias Factory = StartViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
-    
     private let startViewModel: StartViewModel
     
     init(navigationController: UINavigationController, factory: Factory, stageId: Int = 1) {

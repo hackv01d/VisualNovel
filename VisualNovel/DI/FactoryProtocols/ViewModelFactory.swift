@@ -14,3 +14,7 @@ protocol StartViewModelFactory {
 protocol WelcomeViewModelFactory {
     func makeWelcomeViewModel(stageId: Int) -> WelcomeViewModel
 }
+
+protocol GameViewModelFactory {
+    func makeGameViewModel(stageId: Int) -> GameViewModel
+}

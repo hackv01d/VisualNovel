@@ -68,7 +68,7 @@ class WelcomeViewController: UIViewController {
     
     @objc
     private func handleConfirmButton() {
-        viewModel.saveUserName(name: userNameTextField.text)
+        viewModel.startGame(with: userNameTextField.text)
     }
     
     @objc

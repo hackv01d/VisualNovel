@@ -16,7 +16,6 @@ enum StageRepositoryError: Error {
             return "Failed load data"
         case .failedReceiptStage:
             return "Failed receipt stage"
-//            добавить ошибки с чтением json и получением даты
         }
     }
 }
