@@ -7,25 +7,16 @@
 
 import Foundation
 
-enum StageRepositoryError: Error {
-    case failedLoadData, failedReceiptStage
-    
-    var description: String {
-        switch self {
-        case .failedLoadData:
-            return "Failed load data"
-        case .failedReceiptStage:
-            return "Failed receipt stage"
-        }
-    }
-}
-
-final class StageRepositoryImpl {
+final class StageRepositoryImpl: StageRepository {
     
     private var stages: [StageDTO] = []
     
     init() {
         loadStages()
+    }
+    
+    private func getJsonFilePath(jsonFileName: String) -> String? {
+        return Bundle.main.path(forResource: jsonFileName, ofType: "json")
     }
     
     private func loadStages() {
@@ -40,12 +31,6 @@ final class StageRepositoryImpl {
         }
     }
     
-    private func getJsonFilePath(jsonFileName: String) -> String? {
-        return Bundle.main.path(forResource: jsonFileName, ofType: "json")
-    }
-}
-
-extension StageRepositoryImpl: StageRepository {
     func getStage(for stageId: Int, completion: (Result<Stage, StageRepositoryError>) -> Void) {
         if let stage = stages.first(where: { $0.id == stageId })?.toStage() {
             completion(.success(stage))

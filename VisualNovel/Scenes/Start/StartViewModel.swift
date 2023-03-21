@@ -49,10 +49,10 @@ private extension StartViewModel {
     }
     
     func loadStage() {
-        stageRepository.getStage(for: stageId) { [weak self] result in
+        stageRepository.getStage(for: stageId) { result in
             switch result {
             case .success(let stage):
-                self?.stage = stage
+                self.stage = stage
             case .failure(let error):
                 print(error.description)
             }

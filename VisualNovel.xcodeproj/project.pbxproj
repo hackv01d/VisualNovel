@@ -13,6 +13,7 @@
 		490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */; };
 		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
 		490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7329C74E11006C736D /* WelcomeProtocols.swift */; };
+		490CDA7629C7677A006C736D /* StageRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* StageRepositoryError.swift */; };
 		49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8C29C6EB7C00511526 /* AppDelegate.swift */; };
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
@@ -32,6 +33,9 @@
 		49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC929C71F3900511526 /* CoordinatorFactory.swift */; };
 		49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* StartCoordinator.swift */; };
 		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
+		49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271929C8376600A9EDAF /* GameViewController.swift */; };
+		49E5271C29C8377100A9EDAF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271B29C8377100A9EDAF /* GameViewModel.swift */; };
+		49FBB20829C959D5004B655A /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20729C959D5004B655A /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,7 @@
 		490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		490CDA7329C74E11006C736D /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
+		490CDA7529C7677A006C736D /* StageRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageRepositoryError.swift; sourceTree = "<group>"; };
 		49375D8929C6EB7C00511526 /* VisualNovel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualNovel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49375D8C29C6EB7C00511526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49375D8E29C6EB7C00511526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		49375DC929C71F3900511526 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		49375DCB29C7218300511526 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		49E5271929C8376600A9EDAF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49E5271B29C8377100A9EDAF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		49FBB20729C959D5004B655A /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 			children = (
 				49375DAE29C7067200511526 /* StageRepositoryImpl.swift */,
 				49375DB129C706A500511526 /* StageRepository.swift */,
+				490CDA7529C7677A006C736D /* StageRepositoryError.swift */,
 			);
 			path = StageRepository;
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 				49375DBC29C71CAD00511526 /* AppCoordinator.swift */,
 				49375DBB29C71C9D00511526 /* Start */,
 				490CDA6C29C74DC7006C736D /* Welcome */,
+				49E5271829C8374500A9EDAF /* Game */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -233,6 +243,16 @@
 				49375DC729C71D5600511526 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		49E5271829C8374500A9EDAF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				49E5271929C8376600A9EDAF /* GameViewController.swift */,
+				49E5271B29C8377100A9EDAF /* GameViewModel.swift */,
+				49FBB20729C959D5004B655A /* GameController.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,18 +333,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */,
+				49FBB20829C959D5004B655A /* GameController.swift in Sources */,
 				49375DB229C706A500511526 /* StageRepository.swift in Sources */,
 				49375DAD29C705B700511526 /* Stage.swift in Sources */,
 				49375DC829C71D5600511526 /* Coordinator.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
 				49375DAF29C7067200511526 /* StageRepositoryImpl.swift in Sources */,
 				49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */,
+				490CDA7629C7677A006C736D /* StageRepositoryError.swift in Sources */,
 				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
 				49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */,
 				49375DC029C71CCF00511526 /* StartViewController.swift in Sources */,
 				490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */,
+				49E5271C29C8377100A9EDAF /* GameViewModel.swift in Sources */,
 				49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */,
 				490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */,
+				49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */,
 				49375DAA29C7048600511526 /* StageDTO.swift in Sources */,
 				49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */,
 				49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */,

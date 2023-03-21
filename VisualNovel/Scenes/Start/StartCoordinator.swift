@@ -32,7 +32,7 @@ final class StartCoordinator: BaseCoordinator {
 // MARK: - Navigation
 
 extension StartCoordinator {
-    func showWelcomeScene(for stageId: Int) {
+    func showWelcomeScene(with stageId: Int) {
         let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, stageId: stageId)
         coordinate(to: welcomeCoordinator)
     }
@@ -43,7 +43,7 @@ extension StartCoordinator {
 private extension StartCoordinator {
     func setupBindings() {
         startViewModel.didGoToNextScreen = { [weak self] stageId in
-            self?.showWelcomeScene(for: stageId)
+            self?.showWelcomeScene(with: stageId)
         }
     }
 }

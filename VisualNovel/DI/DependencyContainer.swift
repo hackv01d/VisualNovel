@@ -28,6 +28,8 @@ extension DependencyContainer: StartViewModelFactory {
     }
 }
 
+// MARK: - WelcomeViewModelFactory
+
 extension DependencyContainer: WelcomeViewModelFactory {
     func makeWelcomeViewModel(stageId: Int) -> WelcomeViewModel {
         return WelcomeViewModel(factory: self, stageId: stageId)

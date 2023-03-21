@@ -22,6 +22,7 @@ final class WelcomeCoordinator: BaseCoordinator {
     
     override func start() {
         let viewController = WelcomeViewController(with: welcomeViewModel)
+        navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(viewController, animated: true)
     }
 }
