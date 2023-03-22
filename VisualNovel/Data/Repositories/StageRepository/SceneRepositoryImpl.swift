@@ -43,9 +43,7 @@ extension SceneRepositoryImpl: SceneRepository {
     
     func updateWelcomeScene(with sceneId: Int, userName: String?) {
         guard let indexScene = scenes.firstIndex(where: { $0.id == sceneId }) else { return }
-        guard let newUserName = userName?.replacingOccurrences(of: #"((^\s+)|(\s+$))"#,
-                                                               with: "",
-                                                               options: .regularExpression) else { return }
+        guard let newUserName = userName?.trimmingCharacters(in: .whitespaces) else { return }
         
         var scene = scenes[indexScene]
         scene.prompt = scene.prompt.replacingOccurrences(of: scene.userName ?? "unknown", with: newUserName)

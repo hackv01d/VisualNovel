@@ -66,7 +66,7 @@ class GameViewController: UIViewController {
         promptLabel.textColor = .white
         promptLabel.backgroundColor = .black
         promptLabel.textAlignment = .center
-        promptLabel.font = .sceneTitle
+        promptLabel.font = .gamePrompt
         promptLabel.adjustsFontSizeToFitWidth = true
         
         promptLabel.snp.makeConstraints { make in

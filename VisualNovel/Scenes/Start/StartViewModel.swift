@@ -9,7 +9,7 @@ import Foundation
 
 final class StartViewModel {
     
-    var didUpdatePrompt: ((String?) -> Void)?
+    var didUpdateHeader: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     var didGoToNextScreen: ((Int) -> Void)?
     
@@ -44,7 +44,7 @@ extension StartViewModel: StartViewModelType {
 
 private extension StartViewModel {
     func updateDetail() {
-        didUpdatePrompt?(scene?.prompt)
+        didUpdateHeader?(scene?.prompt)
         didUpdateTitle?(scene?.choices.first?.title)
     }
     

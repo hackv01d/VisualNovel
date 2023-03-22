@@ -10,8 +10,8 @@ import SnapKit
 
 class StartViewController: UIViewController {
     
-    private let promptLabel = UILabel()
-    private let continueButton = UIButton(type: .system)
+    private let headerLabel = UILabel()
+    private let continueLabel = DialogueLabel(style: .prompt)
     
     private var viewModel: StartViewModelType
     
@@ -34,14 +34,15 @@ class StartViewController: UIViewController {
     }
     
     @objc
-    private func handleContinueButton() {
+    private func handleContinueTap() {
         viewModel.moveOn()
     }
     
     private func setup() {
         setupSuperView()
         setupPromptLabel()
-        setupContinueButton()
+        setupContinueLabel()
+        setupContinueLabelTapGesture()
     }
     
     private func setupSuperView() {
@@ -49,45 +50,46 @@ class StartViewController: UIViewController {
     }
     
     private func setupPromptLabel() {
-        view.addSubview(promptLabel)
+        view.addSubview(headerLabel)
         
-        promptLabel.textColor = .white
-        promptLabel.font = .scenePrompt
-        promptLabel.textAlignment = .center
-        promptLabel.numberOfLines = 0
-        promptLabel.backgroundColor = .black
+        headerLabel.textColor = .white
+        headerLabel.font = .startHeader
+        headerLabel.textAlignment = .center
+        headerLabel.numberOfLines = 0
+        headerLabel.backgroundColor = .black
         
-        promptLabel.snp.makeConstraints { make in
+        headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(view.bounds.height * 0.25)
             make.height.equalToSuperview().multipliedBy(0.2)
             make.width.equalToSuperview()
         }
     }
     
-    private func setupContinueButton() {
-        view.addSubview(continueButton)
+    private func setupContinueLabel() {
+        view.addSubview(continueLabel)
         
-        continueButton.setTitleColor(.white, for: .normal)
-        continueButton.backgroundColor = .black
-        continueButton.titleLabel?.font = .sceneTitle
-        continueButton.addTarget(self, action: #selector(handleContinueButton), for: .touchUpInside)
-        
-        continueButton.snp.makeConstraints { make in
+        continueLabel.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.width.equalToSuperview()
-            make.top.equalTo(promptLabel.snp.bottom).offset(view.bounds.height * 0.25)
+            make.top.equalTo(headerLabel.snp.bottom).offset(view.bounds.height * 0.25)
         }
+    }
+    
+    private func setupContinueLabelTapGesture() {
+        let continueTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleContinueTap))
+        continueLabel.isUserInteractionEnabled = true
+        continueLabel.addGestureRecognizer(continueTapGesture)
     }
 }
 
 private extension StartViewController {
     func bindViewModel() {
-        viewModel.didUpdatePrompt = { [weak self] prompt in
-            self?.promptLabel.text = prompt
+        viewModel.didUpdateHeader = { [weak self] header in
+            self?.headerLabel.text = header
         }
         
-        viewModel.didUpdateTitle = { [weak self] title in
-            self?.continueButton.setTitle(title, for: .normal)
+        viewModel.didUpdateTitle = { [weak self] text in
+            self?.continueLabel.text = text
         }
     }
 }

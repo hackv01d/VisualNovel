@@ -28,9 +28,9 @@ class WelcomeViewController: UIViewController {
             }
     }
     
-    private let promptLabel = UILabel()
+    private let promptLabel = DialogueLabel(style: .prompt)
     private let userNameTextField = UITextField()
-    private let confirmButton = UIButton(type: .system)
+    private let confirmLabel = DialogueLabel(style: .prompt)
     private var userNameTextFieldBottomConstraint: Constraint?
     
     private var viewModel: WelcomeViewModelType
@@ -67,7 +67,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc
-    private func handleConfirmButton() {
+    private func handleConfirmTap() {
         viewModel.startGame(with: userNameTextField.text)
     }
     
@@ -80,11 +80,11 @@ class WelcomeViewController: UIViewController {
     @objc
     private func keyboardWillShow(_ notification: Notification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-        
+
         let keyboardHeight = keyboardFrame.height
-        let lowerSpace = view.bounds.height - confirmButton.frame.minY
+        let lowerSpace = view.bounds.height - confirmLabel.frame.minY
         let updatedOffset = lowerSpace - keyboardHeight - Constants.UserNameTextField.editModeInset
-        
+
         userNameTextFieldBottomConstraint?.update(offset: updatedOffset)
         animate(with: .transitionCurlUp)
     }
@@ -94,39 +94,23 @@ class WelcomeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    private func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-    }
 
     private func setup() {
         setupSuperView()
-        setupConfirmButton()
+        setupConfirmLabel()
         setupUserNameTextField()
         setupPromptLabel()
+        setupConfirmLabelTapGesture()
     }
     
     private func setupSuperView() {
         view.backgroundColor = .white
     }
     
-    private func setupConfirmButton() {
-        view.addSubview(confirmButton)
+    private func setupConfirmLabel() {
+        view.addSubview(confirmLabel)
         
-        confirmButton.setTitleColor(.white, for: .normal)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        confirmButton.backgroundColor = .black
-        confirmButton.addTarget(self, action: #selector(handleConfirmButton), for: .touchUpInside)
-        
-        confirmButton.snp.makeConstraints { make in
+        confirmLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.ConfirmButton.height)
             make.width.equalToSuperview()
             make.bottom.equalToSuperview().inset(Constants.ConfirmButton.insetBottom)
@@ -145,7 +129,7 @@ class WelcomeViewController: UIViewController {
         userNameTextField.snp.makeConstraints { make in
             make.height.equalTo(Constants.UserNameTextField.height)
             make.width.equalToSuperview()
-            userNameTextFieldBottomConstraint = make.bottom.equalTo(confirmButton.snp.top)
+            userNameTextFieldBottomConstraint = make.bottom.equalTo(confirmLabel.snp.top)
                                                             .offset(Constants.UserNameTextField.insetBottom)
                                                             .constraint
         }
@@ -154,18 +138,31 @@ class WelcomeViewController: UIViewController {
     private func setupPromptLabel() {
         view.addSubview(promptLabel)
         
-        promptLabel.textColor = .white
-        promptLabel.font = .sceneTitle
-        promptLabel.textAlignment = .center
-        promptLabel.backgroundColor = .black
-        promptLabel.adjustsFontSizeToFitWidth = true
-        
         promptLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.PromptLabel.height)
             make.width.equalToSuperview()
             make.bottom.equalTo(userNameTextField.snp.top).offset(Constants.PromptLabel.insetBottom)
         }
     }
+    
+    private func setupConfirmLabelTapGesture() {
+        let confirmTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleConfirmTap))
+        confirmLabel.isUserInteractionEnabled = true
+        confirmLabel.addGestureRecognizer(confirmTapGesture)
+    }
+    
+    private func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
 }
 
 extension WelcomeViewController: UITextFieldDelegate {
@@ -181,12 +178,12 @@ extension WelcomeViewController: UITextFieldDelegate {
 
 private extension WelcomeViewController {
     func bindViewModel() {
-        viewModel.didUpdatePrompt = { [weak self] prompt in
-            self?.promptLabel.text = prompt
+        viewModel.didUpdatePrompt = { [weak self] textPrompt in
+            self?.promptLabel.text = textPrompt
         }
         
         viewModel.didUpdateTitle = { [weak self] title in
-            self?.confirmButton.setTitle(title, for: .normal)
+            self?.confirmLabel.text = title
         }
         
         viewModel.didUpdateName = { [weak self] name in

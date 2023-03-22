@@ -33,6 +33,8 @@
 		49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC929C71F3900511526 /* CoordinatorFactory.swift */; };
 		49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* StartCoordinator.swift */; };
 		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
+		49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */; };
+		49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */; };
 		49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271929C8376600A9EDAF /* GameViewController.swift */; };
 		49E5271C29C8377100A9EDAF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271B29C8377100A9EDAF /* GameViewModel.swift */; };
 		49FBB20829C959D5004B655A /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB20729C959D5004B655A /* GameCoordinator.swift */; };
@@ -70,6 +72,8 @@
 		49375DC929C71F3900511526 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		49375DCB29C7218300511526 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabel.swift; sourceTree = "<group>"; };
+		49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabelStyle.swift; sourceTree = "<group>"; };
 		49E5271929C8376600A9EDAF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		49E5271B29C8377100A9EDAF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		49FBB20729C959D5004B655A /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
@@ -255,6 +259,23 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		49D6EC9A29CAB5EF00F27511 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EC9B29CAB5FA00F27511 /* DialogueLabel */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		49D6EC9B29CAB5FA00F27511 /* DialogueLabel */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */,
+				49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */,
+			);
+			path = DialogueLabel;
+			sourceTree = "<group>";
+		};
 		49E5271829C8374500A9EDAF /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +300,7 @@
 		49FBB21229C9F532004B655A /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				49D6EC9A29CAB5EF00F27511 /* Labels */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -366,6 +388,7 @@
 				49375DB229C706A500511526 /* SceneRepository.swift in Sources */,
 				49375DAD29C705B700511526 /* Scene.swift in Sources */,
 				49375DC829C71D5600511526 /* Coordinator.swift in Sources */,
+				49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */,
 				49FBB20F29C9A4B3004B655A /* UIColor+AppColors.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
 				49375DAF29C7067200511526 /* SceneRepositoryImpl.swift in Sources */,
@@ -374,6 +397,7 @@
 				490CDA7629C7677A006C736D /* SceneRepositoryError.swift in Sources */,
 				49FBB20D29C99AE8004B655A /* String+Extensions.swift in Sources */,
 				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
+				49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */,
 				49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */,
 				49375DC029C71CCF00511526 /* StartViewController.swift in Sources */,
 				490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */,

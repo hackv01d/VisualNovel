@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    static let scenePrompt = UIFont.systemFont(ofSize: 40)
-    static let sceneTitle = UIFont.systemFont(ofSize: 20, weight: .medium)
+    static let startHeader = UIFont.systemFont(ofSize: 40, weight: .medium)
+    static let gamePrompt = UIFont.systemFont(ofSize: 20, weight: .medium)
 }
