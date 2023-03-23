@@ -10,6 +10,18 @@ import SnapKit
 
 class StartViewController: UIViewController {
     
+    private enum Constants {
+            enum HeaderLabel {
+                static let ratioTop: CGFloat = 0.25
+                static let ratioHeight: CGFloat = 0.2
+            }
+            
+            enum ContinueLabel {
+                static let height: CGFloat = 50
+                static let ratioTop: CGFloat = 0.25
+            }
+    }
+    
     private let headerLabel = UILabel()
     private let continueLabel = DialogueLabel(style: .prompt)
     
@@ -24,7 +36,6 @@ class StartViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +51,7 @@ class StartViewController: UIViewController {
     
     private func setup() {
         setupSuperView()
-        setupPromptLabel()
+        setupHeaderLabel()
         setupContinueLabel()
         setupContinueLabelTapGesture()
     }
@@ -49,7 +60,7 @@ class StartViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    private func setupPromptLabel() {
+    private func setupHeaderLabel() {
         view.addSubview(headerLabel)
         
         headerLabel.textColor = .white
@@ -59,8 +70,8 @@ class StartViewController: UIViewController {
         headerLabel.backgroundColor = .black
         
         headerLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(view.bounds.height * 0.25)
-            make.height.equalToSuperview().multipliedBy(0.2)
+            make.top.equalToSuperview().offset(view.bounds.height * Constants.HeaderLabel.ratioTop)
+            make.height.equalToSuperview().multipliedBy(Constants.HeaderLabel.ratioHeight)
             make.width.equalToSuperview()
         }
     }
@@ -69,9 +80,9 @@ class StartViewController: UIViewController {
         view.addSubview(continueLabel)
         
         continueLabel.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(Constants.ContinueLabel.height)
             make.width.equalToSuperview()
-            make.top.equalTo(headerLabel.snp.bottom).offset(view.bounds.height * 0.25)
+            make.top.equalTo(headerLabel.snp.bottom).offset(view.bounds.height * Constants.ContinueLabel.ratioTop)
         }
     }
     

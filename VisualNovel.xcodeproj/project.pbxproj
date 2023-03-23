@@ -13,7 +13,7 @@
 		490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */; };
 		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
 		490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7329C74E11006C736D /* WelcomeProtocols.swift */; };
-		490CDA7629C7677A006C736D /* SceneRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* SceneRepositoryError.swift */; };
+		490CDA7629C7677A006C736D /* ScenesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */; };
 		49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8C29C6EB7C00511526 /* AppDelegate.swift */; };
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
@@ -21,8 +21,8 @@
 		49375DA829C6FA1400511526 /* scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* scenes.json */; };
 		49375DAA29C7048600511526 /* SceneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* SceneDTO.swift */; };
 		49375DAD29C705B700511526 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Scene.swift */; };
-		49375DAF29C7067200511526 /* SceneRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */; };
-		49375DB229C706A500511526 /* SceneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* SceneRepository.swift */; };
+		49375DAF29C7067200511526 /* ScenesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */; };
+		49375DB229C706A500511526 /* ScenesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB129C706A500511526 /* ScenesRepository.swift */; };
 		49375DB529C7187500511526 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB429C7187500511526 /* DependencyContainer.swift */; };
 		49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB729C7193400511526 /* RepositoryFactory.swift */; };
 		49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBC29C71CAD00511526 /* AppCoordinator.swift */; };
@@ -50,7 +50,7 @@
 		490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		490CDA7329C74E11006C736D /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
-		490CDA7529C7677A006C736D /* SceneRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepositoryError.swift; sourceTree = "<group>"; };
+		490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesRepositoryError.swift; sourceTree = "<group>"; };
 		49375D8929C6EB7C00511526 /* VisualNovel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualNovel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49375D8C29C6EB7C00511526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49375D8E29C6EB7C00511526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		49375DA729C6FA1400511526 /* scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes.json; sourceTree = "<group>"; };
 		49375DA929C7048600511526 /* SceneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDTO.swift; sourceTree = "<group>"; };
 		49375DAC29C705B700511526 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepositoryImpl.swift; sourceTree = "<group>"; };
-		49375DB129C706A500511526 /* SceneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRepository.swift; sourceTree = "<group>"; };
+		49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesRepositoryImpl.swift; sourceTree = "<group>"; };
+		49375DB129C706A500511526 /* ScenesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesRepository.swift; sourceTree = "<group>"; };
 		49375DB429C7187500511526 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		49375DB729C7193400511526 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		49375DBC29C71CAD00511526 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -185,9 +185,9 @@
 		49375DB029C7068900511526 /* StageRepository */ = {
 			isa = PBXGroup;
 			children = (
-				49375DAE29C7067200511526 /* SceneRepositoryImpl.swift */,
-				49375DB129C706A500511526 /* SceneRepository.swift */,
-				490CDA7529C7677A006C736D /* SceneRepositoryError.swift */,
+				49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */,
+				49375DB129C706A500511526 /* ScenesRepository.swift */,
+				490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */,
 			);
 			path = StageRepository;
 			sourceTree = "<group>";
@@ -385,16 +385,16 @@
 				490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */,
 				49FBB21129C9A4BE004B655A /* UIFont+AppFonts.swift in Sources */,
 				49FBB20829C959D5004B655A /* GameCoordinator.swift in Sources */,
-				49375DB229C706A500511526 /* SceneRepository.swift in Sources */,
+				49375DB229C706A500511526 /* ScenesRepository.swift in Sources */,
 				49375DAD29C705B700511526 /* Scene.swift in Sources */,
 				49375DC829C71D5600511526 /* Coordinator.swift in Sources */,
 				49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */,
 				49FBB20F29C9A4B3004B655A /* UIColor+AppColors.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
-				49375DAF29C7067200511526 /* SceneRepositoryImpl.swift in Sources */,
+				49375DAF29C7067200511526 /* ScenesRepositoryImpl.swift in Sources */,
 				49FBB20A29C95A73004B655A /* GameProtocols.swift in Sources */,
 				49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */,
-				490CDA7629C7677A006C736D /* SceneRepositoryError.swift in Sources */,
+				490CDA7629C7677A006C736D /* ScenesRepositoryError.swift in Sources */,
 				49FBB20D29C99AE8004B655A /* String+Extensions.swift in Sources */,
 				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
 				49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */,

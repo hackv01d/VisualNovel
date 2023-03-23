@@ -8,7 +8,7 @@
 import Foundation
 
 final class WelcomeViewModel {
-    typealias Factory = SceneRepositoryFactory
+    typealias Factory = ScenesRepositoryFactory
     
     var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
@@ -16,7 +16,7 @@ final class WelcomeViewModel {
     var didGoToGameScreen: ((Int) -> Void)?
     
     private let factory: Factory
-    private lazy var sceneRepository = factory.makeSceneRepository()
+    private lazy var ScenesRepository = factory.makeScenesRepository()
     
     private let sceneId: Int
     private var scene: Scene? {
@@ -41,7 +41,7 @@ extension WelcomeViewModel: WelcomeViewModelType {
         guard userName.isBlank == false else { return }
         guard let sceneId = scene?.choices.first?.id else { return }
         
-        sceneRepository.updateWelcomeScene(with: sceneId, userName: userName)
+        ScenesRepository.updateWelcomeScene(with: sceneId, userName: userName)
         didGoToGameScreen?(sceneId)
     }
     
@@ -63,7 +63,7 @@ private extension WelcomeViewModel {
     }
     
     func loadScene() {
-        sceneRepository.getScene(for: sceneId) { result in
+        ScenesRepository.getScene(for: sceneId) { result in
             switch result {
             case .success(let scene):
                 self.scene = scene

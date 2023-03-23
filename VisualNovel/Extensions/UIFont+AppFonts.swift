@@ -11,4 +11,5 @@ import UIKit
 extension UIFont {
     static let startHeader = UIFont.systemFont(ofSize: 40, weight: .medium)
     static let gamePrompt = UIFont.systemFont(ofSize: 20, weight: .medium)
+    static let userNameText = UIFont.systemFont(ofSize: 20)
 }

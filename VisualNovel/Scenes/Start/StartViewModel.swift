@@ -8,15 +8,14 @@
 import Foundation
 
 final class StartViewModel {
+    typealias Factory = ScenesRepositoryFactory
     
     var didUpdateHeader: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     var didGoToNextScreen: ((Int) -> Void)?
     
-    typealias Factory = SceneRepositoryFactory
-    
     private let factory: Factory
-    private lazy var sceneRepository = factory.makeSceneRepository()
+    private lazy var ScenesRepository = factory.makeScenesRepository()
     
     private let sceneId: Int
     private var scene: Scene? {
@@ -49,7 +48,7 @@ private extension StartViewModel {
     }
     
     func loadScene() {
-        sceneRepository.getScene(for: sceneId) { result in
+        ScenesRepository.getScene(for: sceneId) { result in
             switch result {
             case .success(let scene):
                 self.scene = scene

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SceneRepositoryFactory {
-    func makeSceneRepository() -> SceneRepository
+protocol ScenesRepositoryFactory {
+    func makeScenesRepository() -> ScenesRepository
 }

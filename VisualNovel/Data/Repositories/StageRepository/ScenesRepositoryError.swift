@@ -1,5 +1,5 @@
 //
-//  SceneRepositoryError.swift
+//  ScenesRepositoryError.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SceneRepositoryError: Error {
+enum ScenesRepositoryError: Error {
     case failedLoadData, failedReceiptScene
     
     var description: String {

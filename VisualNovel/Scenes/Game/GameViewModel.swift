@@ -8,13 +8,13 @@
 import Foundation
 
 final class GameViewModel {
-    typealias Factory = SceneRepositoryFactory
+    typealias Factory = ScenesRepositoryFactory
     
     var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateTitle: ((String?) -> Void)?
     
     private let factory: Factory
-    private lazy var sceneRepository = factory.makeSceneRepository()
+    private lazy var ScenesRepository = factory.makeScenesRepository()
     
     private let sceneId: Int
     private var scene: Scene? {
@@ -38,12 +38,10 @@ extension GameViewModel: GameViewModelType {
 private extension GameViewModel {
     func updateDetail() {
         didUpdatePrompt?(scene?.prompt)
-        scene?.choices.forEach { print($0.title) }
-//        didUpdateTitle?()
     }
     
     func loadScene() {
-        sceneRepository.getScene(for: sceneId) { result in
+        ScenesRepository.getScene(for: sceneId) { result in
             switch result {
             case .success(let scene):
                 self.scene = scene
@@ -52,5 +50,4 @@ private extension GameViewModel {
             }
         }
     }
-    
 }

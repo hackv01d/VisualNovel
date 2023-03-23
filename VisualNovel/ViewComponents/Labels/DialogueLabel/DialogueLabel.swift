@@ -9,7 +9,7 @@ import UIKit
 
 class DialogueLabel: UILabel {
     
-    init(style: DialogueLabelStyle, text: String = "", tag: Int = 0) {
+    init(style: DialogueLabelStyle, text: String? = nil, tag: Int = 0) {
         super.init(frame: .zero)
         
         self.text = text

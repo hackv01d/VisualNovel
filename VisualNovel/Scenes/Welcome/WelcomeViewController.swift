@@ -28,8 +28,8 @@ class WelcomeViewController: UIViewController {
             }
     }
     
-    private let promptLabel = DialogueLabel(style: .prompt)
     private let userNameTextField = UITextField()
+    private let promptLabel = DialogueLabel(style: .prompt)
     private let confirmLabel = DialogueLabel(style: .prompt)
     private var userNameTextFieldBottomConstraint: Constraint?
     
@@ -121,7 +121,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(userNameTextField)
         
         userNameTextField.placeholder = "Введите свое имя..."
-        userNameTextField.font = UIFont.systemFont(ofSize: 20)
+        userNameTextField.font = .userNameText
         userNameTextField.textColor = .black
         userNameTextField.backgroundColor = .green
         userNameTextField.delegate = self
