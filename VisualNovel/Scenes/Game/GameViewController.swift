@@ -44,7 +44,6 @@ class GameViewController: UIViewController {
     
     private func createChoiceButton(with title: String, and tag: Int) -> UIButton {
         let button = UIButton()
-//        butto
         button.backgroundColor = .black
         button.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
         return button
@@ -57,14 +56,14 @@ class GameViewController: UIViewController {
     }
     
     private func setupSuperView() {
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = .white
     }
     
     private func setupPromptLabel() {
         view.addSubview(promptLabel)
         
-        promptLabel.textColor = .white
-        promptLabel.backgroundColor = .black
+        promptLabel.textColor = .appText
+        promptLabel.backgroundColor = .promptLabel
         promptLabel.textAlignment = .center
         promptLabel.font = .gamePrompt
         promptLabel.adjustsFontSizeToFitWidth = true

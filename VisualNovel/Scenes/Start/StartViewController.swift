@@ -63,11 +63,11 @@ class StartViewController: UIViewController {
     private func setupHeaderLabel() {
         view.addSubview(headerLabel)
         
-        headerLabel.textColor = .white
         headerLabel.font = .startHeader
+        headerLabel.textColor = .appText
+        headerLabel.backgroundColor = .startHeader
         headerLabel.textAlignment = .center
         headerLabel.numberOfLines = 0
-        headerLabel.backgroundColor = .black
         
         headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(view.bounds.height * Constants.HeaderLabel.ratioTop)

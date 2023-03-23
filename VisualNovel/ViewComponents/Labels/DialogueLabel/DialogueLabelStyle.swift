@@ -10,12 +10,12 @@ import UIKit
 enum DialogueLabelStyle {
     case prompt, choice
     
-    var backgroundColor: UIColor {
+    var backgroundColor: UIColor? {
         switch self {
         case .prompt:
-            return .gray
+            return .promptLabel
         case .choice:
-            return .red
+            return .choiceLabel
         }
     }
 }

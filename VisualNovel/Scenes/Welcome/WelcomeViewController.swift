@@ -120,10 +120,10 @@ class WelcomeViewController: UIViewController {
     private func setupUserNameTextField() {
         view.addSubview(userNameTextField)
         
-        userNameTextField.placeholder = "Введите свое имя..."
         userNameTextField.font = .userNameText
-        userNameTextField.textColor = .black
-        userNameTextField.backgroundColor = .green
+        userNameTextField.textColor = .userNameText
+        userNameTextField.backgroundColor = .userNameTextField
+        userNameTextField.placeholder = "Введите свое имя..."
         userNameTextField.delegate = self
 
         userNameTextField.snp.makeConstraints { make in
