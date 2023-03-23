@@ -1,5 +1,5 @@
 //
-//  StartViewController.swift
+//  MainViewController.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StartViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private enum Constants {
             enum HeaderLabel {
@@ -25,9 +25,9 @@ class StartViewController: UIViewController {
     private let headerLabel = UILabel()
     private let continueLabel = DialogueLabel(style: .prompt)
     
-    private var viewModel: StartViewModelType
+    private var viewModel: MainViewModelType
     
-    init(with viewModel: StartViewModelType) {
+    init(with viewModel: MainViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -93,13 +93,13 @@ class StartViewController: UIViewController {
     }
 }
 
-private extension StartViewController {
+private extension MainViewController {
     func bindViewModel() {
         viewModel.didUpdateHeader = { [weak self] header in
             self?.headerLabel.text = header
         }
         
-        viewModel.didUpdateTitle = { [weak self] text in
+        viewModel.didUpdateChoice = { [weak self] text in
             self?.continueLabel.text = text
         }
     }

@@ -1,5 +1,5 @@
 //
-//  StartViewModel.swift
+//  MainViewModel.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-final class StartViewModel {
+final class MainViewModel {
     typealias Factory = ScenesRepositoryFactory
     
     var didUpdateHeader: ((String?) -> Void)?
-    var didUpdateTitle: ((String?) -> Void)?
-    var didGoToNextScreen: ((Int) -> Void)?
+    var didUpdateChoice: ((String?) -> Void)?
+    var didGoToWelcomeScene: ((Int) -> Void)?
     
     private let factory: Factory
     private lazy var ScenesRepository = factory.makeScenesRepository()
@@ -30,21 +30,21 @@ final class StartViewModel {
     }
 }
 
-extension StartViewModel: StartViewModelType {
+extension MainViewModel: MainViewModelType {
     func getSceneDetail() {
         loadScene()
     }
     
     func moveOn() {
         guard let sceneId = scene?.choices.first?.id else { return }
-        didGoToNextScreen?(sceneId)
+        didGoToWelcomeScene?(sceneId)
     }
 }
 
-private extension StartViewModel {
+private extension MainViewModel {
     func updateDetail() {
         didUpdateHeader?(scene?.prompt)
-        didUpdateTitle?(scene?.choices.first?.title)
+        didUpdateChoice?(scene?.choices.first?.title)
     }
     
     func loadScene() {

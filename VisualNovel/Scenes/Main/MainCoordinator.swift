@@ -1,5 +1,5 @@
 //
-//  StartCoordinator.swift
+//  MainCoordinator.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -8,29 +8,29 @@
 import Foundation
 import UIKit
 
-final class StartCoordinator: BaseCoordinator {
-    typealias Factory = StartViewModelFactory & CoordinatorFactory
+final class MainCoordinator: BaseCoordinator {
+    typealias Factory = MainViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
-    private let startViewModel: StartViewModel
+    private let startViewModel: MainViewModel
     
     init(navigationController: UINavigationController, factory: Factory, sceneId: Int = 1) {
         self.factory = factory
-        startViewModel = factory.makeStartViewModel(sceneId: sceneId)
+        startViewModel = factory.makeMainViewModel(sceneId: sceneId)
         super.init(navigationController: navigationController)
     }
     
     override func start() {
         setupBindings()
         
-        let viewController = StartViewController(with: startViewModel)
+        let viewController = MainViewController(with: startViewModel)
         navigationController.setViewControllers([viewController], animated: true)
     }
 }
 
 // MARK: - Navigation
 
-extension StartCoordinator {
+extension MainCoordinator {
     func showWelcomeScene(with sceneId: Int) {
         let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, sceneId: sceneId)
         coordinate(to: welcomeCoordinator)
@@ -39,9 +39,9 @@ extension StartCoordinator {
 
 // MARK: - Bindings
 
-private extension StartCoordinator {
+private extension MainCoordinator {
     func setupBindings() {
-        startViewModel.didGoToNextScreen = { [weak self] sceneId in
+        startViewModel.didGoToWelcomeScene = { [weak self] sceneId in
             self?.showWelcomeScene(with: sceneId)
         }
     }
