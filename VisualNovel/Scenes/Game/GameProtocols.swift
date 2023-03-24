@@ -9,7 +9,8 @@ import Foundation
 
 protocol GameViewModelType {
     var didUpdatePrompt: ((String?) -> Void)? { get set }
-    var didUpdateTitle: ((String?) -> Void)? { get set }
+    var didUpdateChoice: ((String, Int) -> Void)? { get set }
     
     func getSceneDetail()
+    func moveOn(for sceneId: Int?)
 }

@@ -10,7 +10,7 @@ import UIKit
 extension UIColor {
     static let appText = UIColor(named: "appText")
     
-    static let startHeader = UIColor(named: "startHeader")
+    static let mainHeader = UIColor(named: "mainHeader")
     static let promptLabel = UIColor(named: "promptLabel")
     static let choiceLabel = UIColor(named: "choiceLabel")
     

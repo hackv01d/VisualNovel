@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol StartViewModelFactory {
-    func makeStartViewModel(sceneId: Int) -> StartViewModel
+protocol MainViewModelFactory {
+    func makeMainViewModel(sceneId: Int) -> MainViewModel
 }
 
 protocol WelcomeViewModelFactory {

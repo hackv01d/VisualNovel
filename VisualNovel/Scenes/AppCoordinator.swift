@@ -23,15 +23,15 @@ final class AppCoordinator: BaseCoordinator {
     override func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-        showStartScene()
+        showMainScene()
     }
 }
 
 // MARK: - Navigation
 
 extension AppCoordinator {
-    func showStartScene() {
-        let startCoordinator = factory.makeStartCoordinator(navigationController: navigationController)
-        coordinate(to: startCoordinator)
+    func showMainScene() {
+        let mainCoordinator = factory.makeMainCoordinator(navigationController: navigationController, sceneId: 1, sceneType: .start)
+        coordinate(to: mainCoordinator)
     }
 }

@@ -31,8 +31,8 @@ final class WelcomeCoordinator: BaseCoordinator {
 
 // MARK: - Navigation 
 
-extension WelcomeCoordinator {
-    func showGameScene(for sceneId: Int) {
+private extension WelcomeCoordinator {
+    func showGameScene(with sceneId: Int) {
         let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController, sceneId: sceneId)
         coordinate(to: gameCoordinator)
     }
@@ -42,8 +42,8 @@ extension WelcomeCoordinator {
 
 private extension WelcomeCoordinator {
     func setupBindings() {
-        welcomeViewModel.didGoToGameScreen = { [weak self] sceneId in
-            self?.showGameScene(for: sceneId)
+        welcomeViewModel.didGoToGameScene = { [weak self] sceneId in
+            self?.showGameScene(with: sceneId)
         }
     }
 }

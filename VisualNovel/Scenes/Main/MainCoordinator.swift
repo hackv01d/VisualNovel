@@ -12,25 +12,68 @@ final class MainCoordinator: BaseCoordinator {
     typealias Factory = MainViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
-    private let startViewModel: MainViewModel
+    private var mainViewModel: MainViewModel
+    private let sceneType: MainSceneType
     
-    init(navigationController: UINavigationController, factory: Factory, sceneId: Int = 1) {
+    init(navigationController: UINavigationController, factory: Factory, sceneId: Int, sceneType: MainSceneType) {
         self.factory = factory
-        startViewModel = factory.makeMainViewModel(sceneId: sceneId)
+        self.sceneType = sceneType
+        mainViewModel = factory.makeMainViewModel(sceneId: sceneId)
         super.init(navigationController: navigationController)
     }
     
     override func start() {
         setupBindings()
+        sceneType == .start ? showStartMainScene() : showLastMainScene()
+    }
+    
+    private func selectScene(_ scene: SceneType, sceneId: Int) {
+        switch scene {
+        case .main(let type):
+            mainViewModel.updateData(sceneId: sceneId)
+            if type == .start {
+                resetCoordinatorCycle()
+                showStartMainScene()
+            } else {
+                showLastMainScene()
+            }
+            
+        case .welcome:
+            showWelcomeScene(with: sceneId)
+            
+        case .game:
+            return
+        }
+    }
+    
+    private func resetCoordinatorCycle() {
+        var currentCoordinator = rootCoordinator
         
-        let viewController = MainViewController(with: startViewModel)
-        navigationController.setViewControllers([viewController], animated: true)
+        while currentCoordinator?.rootCoordinator != nil {
+            currentCoordinator = currentCoordinator?.rootCoordinator
+        }
+        
+        if let appCoordinator = currentCoordinator as? AppCoordinator {
+            appCoordinator.removeChildCoordinators()
+            self.rootCoordinator = appCoordinator
+            appCoordinator.childCoordinators.append(self)
+        }
     }
 }
 
 // MARK: - Navigation
 
-extension MainCoordinator {
+private extension MainCoordinator {
+    func showStartMainScene() {
+        let viewController = MainViewController(with: mainViewModel)
+        navigationController.setViewControllers([viewController], animated: true)
+    }
+    
+    func showLastMainScene() {
+        let viewController = MainViewController(with: mainViewModel)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
     func showWelcomeScene(with sceneId: Int) {
         let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, sceneId: sceneId)
         coordinate(to: welcomeCoordinator)
@@ -41,8 +84,8 @@ extension MainCoordinator {
 
 private extension MainCoordinator {
     func setupBindings() {
-        startViewModel.didGoToWelcomeScene = { [weak self] sceneId in
-            self?.showWelcomeScene(with: sceneId)
+        mainViewModel.didGoToNextScene = { [weak self] scene, sceneId in
+            self?.selectScene(scene, sceneId: sceneId)
         }
     }
 }

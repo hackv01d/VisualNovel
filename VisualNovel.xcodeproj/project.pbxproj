@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		490CDA6929C73B5E006C736D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CDA6829C73B5E006C736D /* SnapKit */; };
-		490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6A29C74961006C736D /* StartProtocols.swift */; };
+		490CDA6B29C74961006C736D /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6A29C74961006C736D /* MainProtocols.swift */; };
 		490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6D29C74DE2006C736D /* WelcomeViewController.swift */; };
 		490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */; };
 		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
@@ -26,13 +26,14 @@
 		49375DB529C7187500511526 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB429C7187500511526 /* DependencyContainer.swift */; };
 		49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DB729C7193400511526 /* RepositoryFactory.swift */; };
 		49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBC29C71CAD00511526 /* AppCoordinator.swift */; };
-		49375DC029C71CCF00511526 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBF29C71CCF00511526 /* StartViewController.swift */; };
-		49375DC229C71D2000511526 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC129C71D2000511526 /* StartViewModel.swift */; };
+		49375DC029C71CCF00511526 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DBF29C71CCF00511526 /* MainViewController.swift */; };
+		49375DC229C71D2000511526 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC129C71D2000511526 /* MainViewModel.swift */; };
 		49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC529C71D4700511526 /* BaseCoordinator.swift */; };
 		49375DC829C71D5600511526 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC729C71D5600511526 /* Coordinator.swift */; };
 		49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC929C71F3900511526 /* CoordinatorFactory.swift */; };
-		49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* StartCoordinator.swift */; };
+		49375DCC29C7218300511526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* MainCoordinator.swift */; };
 		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
+		497BCB7B29CCB43F0016DF94 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BCB7A29CCB43F0016DF94 /* SceneType.swift */; };
 		49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */; };
 		49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */; };
 		49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5271929C8376600A9EDAF /* GameViewController.swift */; };
@@ -45,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		490CDA6A29C74961006C736D /* StartProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartProtocols.swift; sourceTree = "<group>"; };
+		490CDA6A29C74961006C736D /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		490CDA6D29C74DE2006C736D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		490CDA6F29C74DF6006C736D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
@@ -65,13 +66,14 @@
 		49375DB429C7187500511526 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		49375DB729C7193400511526 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		49375DBC29C71CAD00511526 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		49375DBF29C71CCF00511526 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		49375DC129C71D2000511526 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		49375DBF29C71CCF00511526 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		49375DC129C71D2000511526 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		49375DC529C71D4700511526 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		49375DC729C71D5600511526 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		49375DC929C71F3900511526 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
-		49375DCB29C7218300511526 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
+		49375DCB29C7218300511526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		497BCB7A29CCB43F0016DF94 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabel.swift; sourceTree = "<group>"; };
 		49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabelStyle.swift; sourceTree = "<group>"; };
 		49E5271929C8376600A9EDAF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				49375DAC29C705B700511526 /* Scene.swift */,
+				497BCB7A29CCB43F0016DF94 /* SceneType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,22 +227,22 @@
 			isa = PBXGroup;
 			children = (
 				49375DBC29C71CAD00511526 /* AppCoordinator.swift */,
-				49375DBB29C71C9D00511526 /* Start */,
+				49375DBB29C71C9D00511526 /* Main */,
 				490CDA6C29C74DC7006C736D /* Welcome */,
 				49E5271829C8374500A9EDAF /* Game */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		49375DBB29C71C9D00511526 /* Start */ = {
+		49375DBB29C71C9D00511526 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				49375DBF29C71CCF00511526 /* StartViewController.swift */,
-				49375DC129C71D2000511526 /* StartViewModel.swift */,
-				49375DCB29C7218300511526 /* StartCoordinator.swift */,
-				490CDA6A29C74961006C736D /* StartProtocols.swift */,
+				49375DBF29C71CCF00511526 /* MainViewController.swift */,
+				49375DC129C71D2000511526 /* MainViewModel.swift */,
+				49375DCB29C7218300511526 /* MainCoordinator.swift */,
+				490CDA6A29C74961006C736D /* MainProtocols.swift */,
 			);
-			path = Start;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		49375DC329C71D2700511526 /* Base */ = {
@@ -382,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CDA6B29C74961006C736D /* StartProtocols.swift in Sources */,
+				490CDA6B29C74961006C736D /* MainProtocols.swift in Sources */,
 				49FBB21129C9A4BE004B655A /* UIFont+AppFonts.swift in Sources */,
 				49FBB20829C959D5004B655A /* GameCoordinator.swift in Sources */,
 				49375DB229C706A500511526 /* ScenesRepository.swift in Sources */,
@@ -399,20 +402,21 @@
 				490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */,
 				49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */,
 				49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */,
-				49375DC029C71CCF00511526 /* StartViewController.swift in Sources */,
+				49375DC029C71CCF00511526 /* MainViewController.swift in Sources */,
 				490CDA6E29C74DE2006C736D /* WelcomeViewController.swift in Sources */,
 				49E5271C29C8377100A9EDAF /* GameViewModel.swift in Sources */,
-				49375DCC29C7218300511526 /* StartCoordinator.swift in Sources */,
+				49375DCC29C7218300511526 /* MainCoordinator.swift in Sources */,
 				490CDA7429C74E11006C736D /* WelcomeProtocols.swift in Sources */,
 				49E5271A29C8376600A9EDAF /* GameViewController.swift in Sources */,
 				49375DAA29C7048600511526 /* SceneDTO.swift in Sources */,
 				49375DC629C71D4700511526 /* BaseCoordinator.swift in Sources */,
 				49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */,
+				497BCB7B29CCB43F0016DF94 /* SceneType.swift in Sources */,
 				49375DBD29C71CAD00511526 /* AppCoordinator.swift in Sources */,
 				49375DB529C7187500511526 /* DependencyContainer.swift in Sources */,
 				49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */,
 				490CDA7029C74DF6006C736D /* WelcomeViewModel.swift in Sources */,
-				49375DC229C71D2000511526 /* StartViewModel.swift in Sources */,
+				49375DC229C71D2000511526 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

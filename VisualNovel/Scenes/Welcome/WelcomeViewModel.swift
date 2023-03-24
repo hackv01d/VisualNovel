@@ -11,12 +11,12 @@ final class WelcomeViewModel {
     typealias Factory = ScenesRepositoryFactory
     
     var didUpdatePrompt: ((String?) -> Void)?
-    var didUpdateTitle: ((String?) -> Void)?
+    var didUpdateChoice: ((String?) -> Void)?
     var didUpdateName: ((String) -> Void)?
-    var didGoToGameScreen: ((Int) -> Void)?
+    var didGoToGameScene: ((Int) -> Void)?
     
     private let factory: Factory
-    private lazy var ScenesRepository = factory.makeScenesRepository()
+    private lazy var scenesRepository = factory.makeScenesRepository()
     
     private let sceneId: Int
     private var scene: Scene? {
@@ -41,8 +41,8 @@ extension WelcomeViewModel: WelcomeViewModelType {
         guard userName.isBlank == false else { return }
         guard let sceneId = scene?.choices.first?.id else { return }
         
-        ScenesRepository.updateWelcomeScene(with: sceneId, userName: userName)
-        didGoToGameScreen?(sceneId)
+        scenesRepository.updateWelcomeScene(with: sceneId, userName: userName)
+        didGoToGameScene?(sceneId)
     }
     
     func checkLengthValid(_ name: String?) {
@@ -52,18 +52,17 @@ extension WelcomeViewModel: WelcomeViewModelType {
         name.removeLast()
         didUpdateName?(name)
         return
- 
     }
 }
 
 private extension WelcomeViewModel {
     func updateDetail() {
         didUpdatePrompt?(scene?.prompt)
-        didUpdateTitle?(scene?.choices.first?.title)
+        didUpdateChoice?(scene?.choices.first?.title)
     }
     
     func loadScene() {
-        ScenesRepository.getScene(for: sceneId) { result in
+        scenesRepository.getScene(for: sceneId) { result in
             switch result {
             case .success(let scene):
                 self.scene = scene

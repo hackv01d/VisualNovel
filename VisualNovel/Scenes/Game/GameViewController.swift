@@ -19,7 +19,8 @@ class GameViewController: UIViewController {
         }
         
         enum ChoicesStackView {
-//            static let spacing:
+            static let ratioHeight: CGFloat = 0.38
+            static let spacing: CGFloat = 35
         }
     }
 
@@ -42,21 +43,45 @@ class GameViewController: UIViewController {
         viewModel.getSceneDetail()
     }
     
-    private func createChoiceButton(with title: String, and tag: Int) -> UIButton {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
-        return button
+    @objc
+    private func handleChoiceTap(_ gesture: UITapGestureRecognizer) {
+        viewModel.moveOn(for: gesture.view?.tag)
+    }
+    
+    private func makeChoiceLabel(with text: String, and tag: Int) {
+        let shouldShow: DialogueLabelStyle = text.isEmpty ? .flexibleSpace : .choice
+        let choiceLabel = DialogueLabel(style: shouldShow, text: text, tag: tag)
+        let choiceTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleChoiceTap))
+        choiceLabel.isUserInteractionEnabled = true
+        choiceLabel.addGestureRecognizer(choiceTapGesture)
+        choicesStackView.addArrangedSubview(choiceLabel)
     }
     
     private func setup() {
         setupSuperView()
-        setupPromptLabel()
         setupChoicesStackView()
+        setupPromptLabel()
     }
     
     private func setupSuperView() {
         view.backgroundColor = .white
+    }
+    
+    private func setupChoicesStackView() {
+        view.addSubview(choicesStackView)
+        
+        choicesStackView.spacing = Constants.ChoicesStackView.spacing
+        choicesStackView.axis = .vertical
+        choicesStackView.backgroundColor = .clear
+        choicesStackView.distribution = .fillEqually
+        choicesStackView.isLayoutMarginsRelativeArrangement = true
+        choicesStackView.layoutMargins.top = Constants.ChoicesStackView.spacing
+        
+        choicesStackView.snp.makeConstraints { make in
+            make.height.equalToSuperview().multipliedBy(Constants.ChoicesStackView.ratioHeight)
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     private func setupPromptLabel() {
@@ -71,29 +96,9 @@ class GameViewController: UIViewController {
         promptLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.PromptLabel.height)
             make.width.equalToSuperview()
-            make.top.equalToSuperview().offset(300)
+            make.bottom.equalTo(choicesStackView.snp.top)
         }
     }
-    
-    private func setupChoicesStackView() {
-        view.addSubview(choicesStackView)
-        
-        choicesStackView.axis = .vertical
-        choicesStackView.spacing = 20
-        
-        for _ in 1...3 {
-//            choicesStackView.addArrangedSubview()
-        }
-        
-//        choicesStackView.arrangedSubviews[0].t
-        
-        choicesStackView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-    }
-    
-
 }
 
 private extension GameViewController {
@@ -102,8 +107,8 @@ private extension GameViewController {
             self?.promptLabel.text = prompt
         }
         
-        viewModel.didUpdateTitle = { [weak self] title in
-            print(title)
+        viewModel.didUpdateChoice = { [weak self] text, tag in
+            self?.makeChoiceLabel(with: text, and: tag)
         }
     }
 }

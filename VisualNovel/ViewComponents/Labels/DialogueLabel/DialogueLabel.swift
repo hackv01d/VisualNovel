@@ -22,10 +22,11 @@ class DialogueLabel: UILabel {
     }
     
     private func setup(style: DialogueLabelStyle) {
-        textColor = .appText
         font = .gamePrompt
+        textColor = .appText
         textAlignment = .center
-        backgroundColor = style.backgroundColor
+        layer.opacity = style.opacity
         adjustsFontSizeToFitWidth = true
+        backgroundColor = style.backgroundColor
     }
 }

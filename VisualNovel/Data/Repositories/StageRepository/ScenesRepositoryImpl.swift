@@ -15,6 +15,14 @@ final class ScenesRepositoryImplementation: ScenesRepository {
         loadScenes()
     }
     
+    func isLastMainScene(sceneId: Int) -> Bool {
+        return scenes.last?.id == sceneId
+    }
+    
+    func isStartMainScene(sceneId: Int) -> Bool {
+        return scenes.first?.id == sceneId
+    }
+    
     func getScene(for sceneId: Int, completion: (Result<Scene, ScenesRepositoryError>) -> Void) {
         if let scene = scenes.first(where: { $0.id == sceneId }) {
             completion(.success(scene))

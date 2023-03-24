@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum SceneType {
+    case main(MainSceneType)
+    case welcome
+    case game
+}
+
+enum MainSceneType {
+    case start
+    case last
+}

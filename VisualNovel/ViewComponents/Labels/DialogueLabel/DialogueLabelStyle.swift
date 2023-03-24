@@ -8,7 +8,16 @@
 import UIKit
 
 enum DialogueLabelStyle {
-    case prompt, choice
+    case prompt, choice, flexibleSpace
+    
+    var opacity: Float {
+        switch self {
+        case .prompt, .choice:
+            return 1
+        case .flexibleSpace:
+            return 0
+        }
+    }
     
     var backgroundColor: UIColor? {
         switch self {
@@ -16,6 +25,8 @@ enum DialogueLabelStyle {
             return .promptLabel
         case .choice:
             return .choiceLabel
+        case .flexibleSpace:
+            return nil
         }
     }
 }

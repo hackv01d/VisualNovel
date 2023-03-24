@@ -8,6 +8,8 @@
 import Foundation
 
 protocol ScenesRepository {
+    func isLastMainScene(sceneId: Int) -> Bool
+    func isStartMainScene(sceneId: Int) -> Bool
     func updateWelcomeScene(with sceneId: Int, userName: String?)
     func getScene(for sceneId: Int, completion: (Result<Scene, ScenesRepositoryError>) -> Void)
 }

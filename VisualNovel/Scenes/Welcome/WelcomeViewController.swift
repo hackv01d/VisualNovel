@@ -22,9 +22,9 @@ class WelcomeViewController: UIViewController {
                 static let editModeInset: CGFloat = 20
             }
             
-            enum ConfirmButton {
+            enum ConfirmLabel {
                 static let height: CGFloat = 50
-                static let insetBottom: CGFloat = 150
+                static let insetBottom: CGFloat = 120
             }
     }
     
@@ -111,9 +111,9 @@ class WelcomeViewController: UIViewController {
         view.addSubview(confirmLabel)
         
         confirmLabel.snp.makeConstraints { make in
-            make.height.equalTo(Constants.ConfirmButton.height)
+            make.height.equalTo(Constants.ConfirmLabel.height)
             make.width.equalToSuperview()
-            make.bottom.equalToSuperview().inset(Constants.ConfirmButton.insetBottom)
+            make.bottom.equalToSuperview().inset(Constants.ConfirmLabel.insetBottom)
         }
     }
     
@@ -182,7 +182,7 @@ private extension WelcomeViewController {
             self?.promptLabel.text = textPrompt
         }
         
-        viewModel.didUpdateTitle = { [weak self] title in
+        viewModel.didUpdateChoice = { [weak self] title in
             self?.confirmLabel.text = title
         }
         

@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
             enum HeaderLabel {
                 static let ratioTop: CGFloat = 0.25
                 static let ratioHeight: CGFloat = 0.2
+                static let numberOfLines: Int = 0
             }
             
             enum ContinueLabel {
@@ -63,11 +64,11 @@ class MainViewController: UIViewController {
     private func setupHeaderLabel() {
         view.addSubview(headerLabel)
         
-        headerLabel.font = .startHeader
+        headerLabel.font = .mainHeader
         headerLabel.textColor = .appText
-        headerLabel.backgroundColor = .startHeader
+        headerLabel.backgroundColor = .mainHeader
         headerLabel.textAlignment = .center
-        headerLabel.numberOfLines = 0
+        headerLabel.numberOfLines = Constants.HeaderLabel.numberOfLines
         
         headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(view.bounds.height * Constants.HeaderLabel.ratioTop)
