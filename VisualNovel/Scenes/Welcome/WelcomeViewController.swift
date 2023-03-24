@@ -121,9 +121,12 @@ class WelcomeViewController: UIViewController {
         view.addSubview(userNameTextField)
         
         userNameTextField.font = .userNameText
+        userNameTextField.leftPadding(17)
+        userNameTextField.tintColor = .choiceLabel
         userNameTextField.textColor = .userNameText
+        userNameTextField.placeholder = viewModel.placeholder
+        userNameTextField.placeHolderColor(.userNamePlaceholder)
         userNameTextField.backgroundColor = .userNameTextField
-        userNameTextField.placeholder = "Введите свое имя..."
         userNameTextField.delegate = self
 
         userNameTextField.snp.makeConstraints { make in

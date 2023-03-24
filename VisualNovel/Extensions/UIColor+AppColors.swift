@@ -14,7 +14,7 @@ extension UIColor {
     static let promptLabel = UIColor(named: "promptLabel")
     static let choiceLabel = UIColor(named: "choiceLabel")
     
-    static let userNameTextField = UIColor(named: "userNameTextField")
     static let userNameText = UIColor(named: "userNameText")
-    
+    static let userNameTextField = UIColor(named: "userNameTextField")
+    static let userNamePlaceholder = UIColor(named: "userNamePlaceholder")
 }

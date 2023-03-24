@@ -17,6 +17,7 @@ final class WelcomeViewModel {
     
     private let factory: Factory
     private lazy var scenesRepository = factory.makeScenesRepository()
+    private(set) var placeholder = "Введите свое имя..."
     
     private let sceneId: Int
     private var scene: Scene? {

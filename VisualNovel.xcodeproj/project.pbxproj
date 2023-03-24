@@ -33,6 +33,7 @@
 		49375DCA29C71F3900511526 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DC929C71F3900511526 /* CoordinatorFactory.swift */; };
 		49375DCC29C7218300511526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* MainCoordinator.swift */; };
 		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
+		496FFF1029CDE400008D8304 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FFF0F29CDE400008D8304 /* UITextField+Extensions.swift */; };
 		497BCB7B29CCB43F0016DF94 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BCB7A29CCB43F0016DF94 /* SceneType.swift */; };
 		49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */; };
 		49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */; };
@@ -73,6 +74,7 @@
 		49375DC929C71F3900511526 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		49375DCB29C7218300511526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		496FFF0F29CDE400008D8304 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		497BCB7A29CCB43F0016DF94 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabel.swift; sourceTree = "<group>"; };
 		49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabelStyle.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				49FBB20C29C99AE8004B655A /* String+Extensions.swift */,
 				49FBB20E29C9A4B3004B655A /* UIColor+AppColors.swift */,
 				49FBB21029C9A4BE004B655A /* UIFont+AppFonts.swift */,
+				496FFF0F29CDE400008D8304 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */,
 				49FBB20F29C9A4B3004B655A /* UIColor+AppColors.swift in Sources */,
 				49375DB829C7193400511526 /* RepositoryFactory.swift in Sources */,
+				496FFF1029CDE400008D8304 /* UITextField+Extensions.swift in Sources */,
 				49375DAF29C7067200511526 /* ScenesRepositoryImpl.swift in Sources */,
 				49FBB20A29C95A73004B655A /* GameProtocols.swift in Sources */,
 				49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */,
