@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  WelcomeViewModel.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.
@@ -7,18 +7,21 @@
 
 import Foundation
 
-final class MainViewModel {
+final class WelcomeViewModel {
     typealias Factory = ScenesRepositoryFactory
     
-    var didUpdateHeader: ((String?) -> Void)?
+    var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateChoice: ((String?) -> Void)?
-    var didGoToNextScene: ((SceneType, Int) -> Void)?
+    var didUpdateName: ((String) -> Void)?
+    
     var showError: ((String) -> Void)?
+    var didGoToGameScene: ((Int) -> Void)?
     
     private let factory: Factory
     private lazy var scenesRepository = factory.makeScenesRepository()
+    private(set) var placeholder = LocalizedStrings.usernamePlaceholder()
     
-    private var sceneId: Int
+    private let sceneId: Int
     private var scene: Scene? {
         didSet {
             updateDetail()
@@ -29,32 +32,35 @@ final class MainViewModel {
         self.factory = factory
         self.sceneId = sceneId
     }
-    
-    func updateData(sceneId: Int) {
-        self.sceneId = sceneId
-    }
 }
 
-extension MainViewModel: MainViewModelType {
+extension WelcomeViewModel: WelcomeViewModelType {
     func getSceneDetail() {
         loadScene()
     }
     
-    func moveOn() {
+    func startGame(with username: String?) {
+        guard let username = username else { return }
+        guard username.isBlank == false else { return }
         guard let sceneId = scene?.choices.first?.id else { return }
         
-        let sceneType = getSceneType(for: sceneId)
-        didGoToNextScene?(sceneType, sceneId)
+        scenesRepository.updateWelcomeScene(with: sceneId, username: username)
+        didGoToGameScene?(sceneId)
+    }
+    
+    func checkLengthValid(_ name: String?) {
+        guard var name = name else { return }
+        guard name.isLengthValid == false else { return }
+        
+        name.removeLast()
+        didUpdateName?(name)
+        return
     }
 }
 
-private extension MainViewModel {
-    func getSceneType(for sceneId: Int) -> SceneType {
-        return scenesRepository.isStartMainScene(sceneId: sceneId) ? .main(.start) : .welcome
-    }
-    
+private extension WelcomeViewModel {
     func updateDetail() {
-        didUpdateHeader?(scene?.prompt)
+        didUpdatePrompt?(scene?.prompt)
         didUpdateChoice?(scene?.choices.first?.title)
     }
     
@@ -64,7 +70,7 @@ private extension MainViewModel {
             case .success(let scene):
                 self.scene = scene
             case .failure(let error):
-                print(error.description)
+                showError?(error.description)
             }
         }
     }

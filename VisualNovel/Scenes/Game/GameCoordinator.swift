@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class GameCoordinator: BaseCoordinator {
+final class GameCoordinator: BaseCoordinator, AlertPresentable {
     typealias Factory = GameViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
@@ -61,6 +61,10 @@ private extension GameCoordinator {
     private func setupBindings() {
         gameViewModel.didGoToNextScene = { [weak self] scene, id in
             self?.selectScene(scene, sceneId: id)
+        }
+        
+        gameViewModel.showError = { [weak self] description in
+            self?.presentErrorAlert(with: description)
         }
     }
 }

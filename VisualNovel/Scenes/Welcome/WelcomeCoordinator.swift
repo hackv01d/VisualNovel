@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class WelcomeCoordinator: BaseCoordinator {
+final class WelcomeCoordinator: BaseCoordinator, AlertPresentable {
     typealias Factory = WelcomeViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
@@ -44,6 +44,10 @@ private extension WelcomeCoordinator {
     func setupBindings() {
         welcomeViewModel.didGoToGameScene = { [weak self] sceneId in
             self?.showGameScene(with: sceneId)
+        }
+        
+        welcomeViewModel.showError = { [weak self] description in
+            self?.presentErrorAlert(with: description)
         }
     }
 }

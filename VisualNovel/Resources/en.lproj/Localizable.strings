@@ -8,7 +8,8 @@
 
 "usernamePlaceholder" = "Enter your name...";
 
-"failedToGetFilePath" = "Failed to get file path";
-"failedToGetData" = "Failed to retrieve data";
-"failedToParseData" = "Failed to parse data";
-"failedToReceiveScene" = "Failed to receive scene";
+"error" = "Error";
+"failedToGetFilePath" = "Failed to access file";
+"failedToGetData" = "Failed to process data";
+"failedToParseData" = "Failed to process data";
+"failedToReceiveScene" = "Failed to load data for the current scene";

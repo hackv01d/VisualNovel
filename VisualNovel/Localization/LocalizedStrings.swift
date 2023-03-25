@@ -10,6 +10,7 @@ import Foundation
 enum LocalizedStrings: String, Localizable {
     case usernamePlaceholder
     
+    case error
     case failedToGetFilePath
     case failedToGetData
     case failedToParseData

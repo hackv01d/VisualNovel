@@ -1,5 +1,5 @@
 //
-//  WelcomeProtocols.swift
+//  WelcomeViewModelType.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 19.03.2023.

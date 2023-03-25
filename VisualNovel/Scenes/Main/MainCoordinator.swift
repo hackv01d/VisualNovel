@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class MainCoordinator: BaseCoordinator {
+final class MainCoordinator: BaseCoordinator, AlertPresentable {
     typealias Factory = MainViewModelFactory & CoordinatorFactory
     
     private let factory: Factory
@@ -27,12 +27,6 @@ final class MainCoordinator: BaseCoordinator {
         
         navigationController.navigationBar.isHidden = true
         sceneType == .start ? showStartMainScene() : showLastMainScene()
-    }
-    
-    private func showErrorAlert(with message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-        navigationController.present(alertController, animated: true)
     }
     
     private func selectScene(_ scene: SceneType, sceneId: Int) {
@@ -94,6 +88,10 @@ private extension MainCoordinator {
     func setupBindings() {
         mainViewModel.didGoToNextScene = { [weak self] scene, sceneId in
             self?.selectScene(scene, sceneId: sceneId)
+        }
+        
+        mainViewModel.showError = { [weak self] description in
+            self?.presentErrorAlert(with: description)
         }
     }
 }

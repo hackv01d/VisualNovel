@@ -12,6 +12,8 @@ final class GameViewModel {
     
     var didUpdatePrompt: ((String?) -> Void)?
     var didUpdateChoice: ((DialogueLabelStyle, String?, Int) -> Void)?
+    
+    var showError: ((String) -> Void)?
     var didGoToNextScene: ((SceneType, Int) -> Void)?
     
     private let factory: Factory
@@ -79,7 +81,7 @@ private extension GameViewModel {
             case .success(let scene):
                 self.scene = scene
             case .failure(let error):
-                print(error.description)
+                showError?(error.description)
             }
         }
     }
