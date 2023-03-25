@@ -45,7 +45,8 @@ final class ScenesRepositoryImplementation: ScenesRepository {
     }
     
     private func loadScenes() {
-        guard let path = getJsonFilePath(jsonFileName: "scenes") else { return }
+        let languagePrefix = Locale.preferredLanguages[0].prefix(2)
+        guard let path = getJsonFilePath(jsonFileName: "scenes_\(languagePrefix)") else { return }
         
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))

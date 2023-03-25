@@ -18,7 +18,7 @@
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
 		49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */; };
-		49375DA829C6FA1400511526 /* scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* scenes.json */; };
+		49375DA829C6FA1400511526 /* scenes_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 49375DA729C6FA1400511526 /* scenes_ru.json */; };
 		49375DAA29C7048600511526 /* SceneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DA929C7048600511526 /* SceneDTO.swift */; };
 		49375DAD29C705B700511526 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAC29C705B700511526 /* Scene.swift */; };
 		49375DAF29C7067200511526 /* ScenesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */; };
@@ -34,6 +34,7 @@
 		49375DCC29C7218300511526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCB29C7218300511526 /* MainCoordinator.swift */; };
 		49375DCE29C722A300511526 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375DCD29C722A300511526 /* ViewModelFactory.swift */; };
 		496FFF1029CDE400008D8304 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FFF0F29CDE400008D8304 /* UITextField+Extensions.swift */; };
+		497A0D7629CEF67200BCAF78 /* scenes_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 497A0D7529CEF67200BCAF78 /* scenes_en.json */; };
 		497BCB7B29CCB43F0016DF94 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BCB7A29CCB43F0016DF94 /* SceneType.swift */; };
 		49D6EC9F29CAB83300F27511 /* DialogueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */; };
 		49D6ECA129CAB8F300F27511 /* DialogueLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */; };
@@ -59,7 +60,7 @@
 		49375D9529C6EB7E00511526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49375D9829C6EB7E00511526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49375D9A29C6EB7E00511526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../../../../../../../../studyingIOS/project_IOS/VisualNovel/VisualNovel/Resources/Info.plist; sourceTree = BUILT_PRODUCTS_DIR; };
-		49375DA729C6FA1400511526 /* scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes.json; sourceTree = "<group>"; };
+		49375DA729C6FA1400511526 /* scenes_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes_ru.json; sourceTree = "<group>"; };
 		49375DA929C7048600511526 /* SceneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDTO.swift; sourceTree = "<group>"; };
 		49375DAC29C705B700511526 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		49375DCB29C7218300511526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		49375DCD29C722A300511526 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		496FFF0F29CDE400008D8304 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		497A0D7529CEF67200BCAF78 /* scenes_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes_en.json; sourceTree = "<group>"; };
 		497BCB7A29CCB43F0016DF94 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		49D6EC9E29CAB83300F27511 /* DialogueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabel.swift; sourceTree = "<group>"; };
 		49D6ECA029CAB8F300F27511 /* DialogueLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueLabelStyle.swift; sourceTree = "<group>"; };
@@ -148,7 +150,8 @@
 				49375D9729C6EB7E00511526 /* LaunchScreen.storyboard */,
 				49375D9529C6EB7E00511526 /* Assets.xcassets */,
 				49375D9A29C6EB7E00511526 /* Info.plist */,
-				49375DA729C6FA1400511526 /* scenes.json */,
+				49375DA729C6FA1400511526 /* scenes_ru.json */,
+				497A0D7529CEF67200BCAF78 /* scenes_en.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -376,7 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */,
-				49375DA829C6FA1400511526 /* scenes.json in Resources */,
+				497A0D7629CEF67200BCAF78 /* scenes_en.json in Resources */,
+				49375DA829C6FA1400511526 /* scenes_ru.json in Resources */,
 				49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,178 @@
+{
+    "scenes": [
+        {
+            "id": 1,
+            "prompt": "My Visual Novel",
+            "choices": [
+                {
+                    "id": 2,
+                    "title": "Start"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "prompt": "Hi! My name is Kiryusha. What's yours?",
+            "choices": [
+                {
+                    "id": 3,
+                    "title": "Confirm"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "prompt": "Great, unknown! What shall we do?",
+            "choices": [
+                {
+                    "id": 4,
+                    "title": "Go for a run"
+                },
+                {
+                    "id": 5,
+                    "title": "Go for a hike"
+                },
+                {
+                    "id": 6,
+                    "title": "Take a walk in the field"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "prompt": "Maybe let's go home?...",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Yes, and watch a movie"
+                },
+                {
+                    "id": 8,
+                    "title": "Yes, and celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "prompt": "How cozy... But it's getting dark already.",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Let's go home and watch a movie"
+                },
+                {
+                    "id": 8,
+                    "title": "Let's go home and celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "prompt": "You seem sad... Let's go home?",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Maybe watch a movie?"
+                },
+                {
+                    "id": 8,
+                    "title": "Yes, let's celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "prompt": "How was the movie?",
+            "choices": [
+                {
+                    "id": 9,
+                    "title": "I liked it!"
+                },
+                {
+                    "id": 10,
+                    "title": "Not really..."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "prompt": "It turned out very beautiful!",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Yes! Maybe watch a movie?"
+                },
+                {
+                    "id": 11,
+                    "title": "Yes! Let's make costumes!"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "prompt": "Great! And now it's time to sleep...",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Yes, it's late..."
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "prompt": "Too bad... Shall we go to sleep then?",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Yes, it's late..."
+                }
+            ]
+        },
+        {
+             "id": 11,
+             "prompt": "I like your suit.",
+             "choices": [
+                 {
+                     "id": 12,
+                     "title": "Yours is very nice too!"
+                 },
+                 {
+                     "id": 13,
+                     "title": "Honestly, I don't really like yours..."
+                 }
+             ]
+         },
+         {
+             "id": 12,
+             "prompt": "Thanks! So, shall we go to bed?",
+             "choices": [
+                 {
+                     "id": 14,
+                     "title": "Yes, it's late already..."
+                 }
+             ]
+         },
+         {
+             "id": 13,
+             "prompt": "No worries, I'm not offended. Shall we go to bed?",
+             "choices": [
+                 {
+                     "id": 14,
+                     "title": "Yes, it's late already..."
+                 }
+             ]
+         },
+         {
+             "id": 14,
+             "prompt": "Thank you for playing!",
+             "choices": [
+                 {
+                     "id": 1,
+                     "title": "Play again"
+                 }
+             ]
+         }
+    ]
+}
+
+
