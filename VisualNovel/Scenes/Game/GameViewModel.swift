@@ -11,7 +11,7 @@ final class GameViewModel {
     typealias Factory = ScenesRepositoryFactory
     
     var didUpdatePrompt: ((String?) -> Void)?
-    var didUpdateChoice: ((String, Int) -> Void)?
+    var didUpdateChoice: ((DialogueLabelStyle, String?, Int) -> Void)?
     var didGoToNextScene: ((SceneType, Int) -> Void)?
     
     private let factory: Factory
@@ -57,25 +57,21 @@ private extension GameViewModel {
         
         didUpdatePrompt?(scene.prompt)
         
-        if scene.choices.count == 3 {
-            for choice in scene.choices {
-                didUpdateChoice?(choice.title, choice.id)
-            }
-        } else if scene.choices.count == 2 {
-            didUpdateChoice?("", 0)
-            for choice in scene.choices {
-                didUpdateChoice?(choice.title, choice.id)
-            }
-        } else if scene.choices.count == 1 {
-            didUpdateChoice?("", 0)
-            guard let choice = scene.choices.first else { return }
-            didUpdateChoice?(choice.title, choice.id)
-            didUpdateChoice?("", 0)
+        let choices = scene.choices
+        let maxChoicesCount = scenesRepository.maxChoicesCount
+        let minChoicesCount = scenesRepository.minChoicesCount
+
+        let requiredFlexibleSpacesCount = max(0, maxChoicesCount - choices.count)
+        let topFlexibleSpacesCount = Int((Double(requiredFlexibleSpacesCount) / 2.0).rounded(.up))
+        let bottomFlexibleSpacesCount = requiredFlexibleSpacesCount - topFlexibleSpacesCount
+        
+        for _ in 0..<topFlexibleSpacesCount {
+            didUpdateChoice?(.flexibleSpace, nil, -1)
         }
-//        
-//        for choice in scene.choices {
-//            didUpdateChoice?(choice.title, choice.id)
-//        }
+        choices.forEach { didUpdateChoice?(.choice, $0.title, $0.id) }
+        for _ in 0..<bottomFlexibleSpacesCount {
+            didUpdateChoice?(.flexibleSpace, nil, -1)
+        }
     }
     
     func loadScene() {

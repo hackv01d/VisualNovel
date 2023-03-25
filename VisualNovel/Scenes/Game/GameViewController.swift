@@ -19,8 +19,10 @@ class GameViewController: UIViewController {
         }
         
         enum ChoicesStackView {
-            static let ratioHeight: CGFloat = 0.38
             static let spacing: CGFloat = 35
+            static let marginTop: CGFloat = 35
+            static let marginBottom: CGFloat = 17
+            static let ratioHeight: CGFloat = 0.38
         }
     }
 
@@ -48,12 +50,15 @@ class GameViewController: UIViewController {
         viewModel.moveOn(for: gesture.view?.tag)
     }
     
-    private func makeChoiceLabel(with text: String, and tag: Int) {
-        let shouldShow: DialogueLabelStyle = text.isEmpty ? .flexibleSpace : .choice
-        let choiceLabel = DialogueLabel(style: shouldShow, text: text, tag: tag)
+    private func makeChoiceLabel(style: DialogueLabelStyle, text: String?, tag: Int) {
+        let choiceLabel = DialogueLabel(style: style)
+        choiceLabel.text = text
+        choiceLabel.tag = tag
+        
         let choiceTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleChoiceTap))
         choiceLabel.isUserInteractionEnabled = true
         choiceLabel.addGestureRecognizer(choiceTapGesture)
+        
         choicesStackView.addArrangedSubview(choiceLabel)
     }
     
@@ -70,12 +75,13 @@ class GameViewController: UIViewController {
     private func setupChoicesStackView() {
         view.addSubview(choicesStackView)
         
-        choicesStackView.spacing = Constants.ChoicesStackView.spacing
         choicesStackView.axis = .vertical
         choicesStackView.backgroundColor = .clear
         choicesStackView.distribution = .fillEqually
         choicesStackView.isLayoutMarginsRelativeArrangement = true
-        choicesStackView.layoutMargins.top = Constants.ChoicesStackView.spacing
+        choicesStackView.spacing = Constants.ChoicesStackView.spacing
+        choicesStackView.layoutMargins.top = Constants.ChoicesStackView.marginTop
+        choicesStackView.layoutMargins.bottom = Constants.ChoicesStackView.marginBottom
         
         choicesStackView.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(Constants.ChoicesStackView.ratioHeight)
@@ -107,8 +113,8 @@ private extension GameViewController {
             self?.promptLabel.text = prompt
         }
         
-        viewModel.didUpdateChoice = { [weak self] text, tag in
-            self?.makeChoiceLabel(with: text, and: tag)
+        viewModel.didUpdateChoice = { [weak self] style, text, tag in
+            self?.makeChoiceLabel(style: style, text: text, tag: tag)
         }
     }
 }

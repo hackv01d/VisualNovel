@@ -125,7 +125,7 @@ class WelcomeViewController: UIViewController {
         userNameTextField.tintColor = .choiceLabel
         userNameTextField.textColor = .userNameText
         userNameTextField.placeholder = viewModel.placeholder
-        userNameTextField.placeHolderColor(.userNamePlaceholder)
+        userNameTextField.placeholderColor(.userNamePlaceholder)
         userNameTextField.backgroundColor = .userNameTextField
         userNameTextField.delegate = self
 

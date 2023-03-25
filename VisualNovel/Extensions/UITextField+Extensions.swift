@@ -14,7 +14,7 @@ extension UITextField {
         leftView = paddingView
     }
     
-    func placeHolderColor(_ color: UIColor?) {
+    func placeholderColor(_ color: UIColor?) {
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
                                                    attributes: [NSAttributedString.Key.foregroundColor: color ?? .darkGray])
     }

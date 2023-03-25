@@ -24,6 +24,8 @@ final class MainCoordinator: BaseCoordinator {
     
     override func start() {
         setupBindings()
+        
+        navigationController.navigationBar.isHidden = true
         sceneType == .start ? showStartMainScene() : showLastMainScene()
     }
     

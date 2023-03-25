@@ -11,6 +11,9 @@ final class ScenesRepositoryImplementation: ScenesRepository {
     
     private var scenes: [Scene] = []
     
+    private(set) lazy var maxChoicesCount = scenes.reduce(Int.min) { max($0, $1.choices.count) }
+    private(set) lazy var minChoicesCount = scenes.reduce(Int.max) { min($0, $1.choices.count) }
+    
     init() {
         loadScenes()
     }
