@@ -11,7 +11,7 @@ struct Scene {
     let id: Int
     var prompt: String
     let choices: [Choice]
-    var userName: String?
+    var username: String?
 }
 
 struct Choice {

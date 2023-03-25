@@ -16,5 +16,5 @@ protocol WelcomeViewModelType {
     
     func getSceneDetail()
     func checkLengthValid(_ name: String?)
-    func startGame(with userName: String?)
+    func startGame(with username: String?)
 }

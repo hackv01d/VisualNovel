@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  VisualNovel
+
+  Created by Ivan Semenov on 25.03.2023.
+  
+*/
+
+"usernamePlaceholder" = "Enter your name...";
+
+"failedToGetFilePath" = "Failed to get file path";
+"failedToGetData" = "Failed to retrieve data";
+"failedToParseData" = "Failed to parse data";
+"failedToReceiveScene" = "Failed to receive scene";

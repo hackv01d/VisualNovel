@@ -15,4 +15,12 @@ extension String {
     var isLengthValid: Bool {
         count < 40
     }
+    
+    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+        NSLocalizedString(self,
+                          tableName:tableName,
+                          bundle: bundle,
+                          value: self,
+                          comment: "")
+    }
 }

@@ -17,7 +17,7 @@ final class WelcomeViewModel {
     
     private let factory: Factory
     private lazy var scenesRepository = factory.makeScenesRepository()
-    private(set) var placeholder = "Введите свое имя..."
+    private(set) var placeholder = LocalizedStrings.usernamePlaceholder()
     
     private let sceneId: Int
     private var scene: Scene? {
@@ -37,12 +37,12 @@ extension WelcomeViewModel: WelcomeViewModelType {
         loadScene()
     }
     
-    func startGame(with userName: String?) {
-        guard let userName = userName else { return }
-        guard userName.isBlank == false else { return }
+    func startGame(with username: String?) {
+        guard let username = username else { return }
+        guard username.isBlank == false else { return }
         guard let sceneId = scene?.choices.first?.id else { return }
         
-        scenesRepository.updateWelcomeScene(with: sceneId, userName: userName)
+        scenesRepository.updateWelcomeScene(with: sceneId, username: username)
         didGoToGameScene?(sceneId)
     }
     

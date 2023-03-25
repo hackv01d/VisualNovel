@@ -59,7 +59,6 @@ private extension GameViewModel {
         
         let choices = scene.choices
         let maxChoicesCount = scenesRepository.maxChoicesCount
-        let minChoicesCount = scenesRepository.minChoicesCount
 
         let requiredFlexibleSpacesCount = max(0, maxChoicesCount - choices.count)
         let topFlexibleSpacesCount = Int((Double(requiredFlexibleSpacesCount) / 2.0).rounded(.up))

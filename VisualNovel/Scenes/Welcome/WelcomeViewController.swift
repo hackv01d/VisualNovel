@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
                 static let insetBottom: CGFloat = -25
             }
             
-            enum UserNameTextField {
+            enum UsernameTextField {
                 static let ratioHeight: CGFloat = 0.23
                 static let insetBottom: CGFloat = -37
                 static let editModeInset: CGFloat = 20
@@ -33,11 +33,11 @@ class WelcomeViewController: UIViewController {
     }
     
     private var contentView = UIView()
-    private let userNameTextField = UITextField()
+    private let usernameTextField = UITextField()
     private let promptLabel = DialogueLabel(style: .prompt)
     private let confirmLabel = DialogueLabel(style: .prompt)
     
-    private var userNameTextFieldBottomConstraint: Constraint?
+    private var usernameTextFieldBottomConstraint: Constraint?
     private var promptLabelKeyboardBottomConstraint: Constraint?
     
     private var viewModel: WelcomeViewModelType
@@ -75,13 +75,13 @@ class WelcomeViewController: UIViewController {
     
     @objc
     private func handleConfirmTap() {
-        viewModel.startGame(with: userNameTextField.text)
+        viewModel.startGame(with: usernameTextField.text)
     }
     
     @objc
     private func keyboardWillHide() {
         promptLabelKeyboardBottomConstraint?.update(priority: .low)
-        userNameTextFieldBottomConstraint?.update(offset: Constants.UserNameTextField.insetBottom)
+        usernameTextFieldBottomConstraint?.update(offset: Constants.UsernameTextField.insetBottom)
         animate(with: .transitionCurlDown)
     }
     
@@ -90,11 +90,11 @@ class WelcomeViewController: UIViewController {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         
         let keyboardHeight = keyboardFrame.height
-        let lowerSpace = contentView.frame.height - confirmLabel.frame.minY - Constants.UserNameTextField.editModeInset
+        let lowerSpace = contentView.frame.height - confirmLabel.frame.minY - Constants.UsernameTextField.editModeInset
         let updatedOffset = lowerSpace - keyboardHeight
         
         promptLabelKeyboardBottomConstraint?.update(priority: .high)
-        userNameTextFieldBottomConstraint?.update(offset: updatedOffset)
+        usernameTextFieldBottomConstraint?.update(offset: updatedOffset)
         animate(with: .transitionCurlUp)
     }
     
@@ -108,7 +108,7 @@ class WelcomeViewController: UIViewController {
         setupSuperView()
         setupContentView()
         setupConfirmLabel()
-        setupUserNameTextField()
+        setupUsernameTextField()
         setupPromptLabel()
         setupConfirmLabelTapGesture()
     }
@@ -140,23 +140,23 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    private func setupUserNameTextField() {
-        contentView.addSubview(userNameTextField)
+    private func setupUsernameTextField() {
+        contentView.addSubview(usernameTextField)
         
-        userNameTextField.font = .userNameText
-        userNameTextField.leftPadding(17)
-        userNameTextField.tintColor = .choiceLabel
-        userNameTextField.textColor = .userNameText
-        userNameTextField.placeholder = viewModel.placeholder
-        userNameTextField.placeholderColor(.userNamePlaceholder)
-        userNameTextField.backgroundColor = .userNameTextField
-        userNameTextField.delegate = self
+        usernameTextField.font = .usernameText
+        usernameTextField.leftPadding(17)
+        usernameTextField.tintColor = .choiceLabel
+        usernameTextField.textColor = .usernameText
+        usernameTextField.placeholder = viewModel.placeholder
+        usernameTextField.placeholderColor(.usernamePlaceholder)
+        usernameTextField.backgroundColor = .usernameTextField
+        usernameTextField.delegate = self
 
-        userNameTextField.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(Constants.UserNameTextField.ratioHeight)
+        usernameTextField.snp.makeConstraints { make in
+            make.height.equalToSuperview().multipliedBy(Constants.UsernameTextField.ratioHeight)
             make.leading.trailing.equalToSuperview()
-            userNameTextFieldBottomConstraint = make.bottom.equalTo(confirmLabel.snp.top)
-                                                           .offset(Constants.UserNameTextField.insetBottom)
+            usernameTextFieldBottomConstraint = make.bottom.equalTo(confirmLabel.snp.top)
+                                                           .offset(Constants.UsernameTextField.insetBottom)
                                                            .constraint
         }
     }
@@ -168,7 +168,7 @@ class WelcomeViewController: UIViewController {
             make.height.equalTo(Constants.PromptLabel.height)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(contentView.snp.top).priority(.medium)
-            promptLabelKeyboardBottomConstraint = make.bottom.equalTo(userNameTextField.snp.top)
+            promptLabelKeyboardBottomConstraint = make.bottom.equalTo(usernameTextField.snp.top)
                                                              .offset(Constants.PromptLabel.insetBottom)
                                                              .priority(.low).constraint
         }
@@ -216,7 +216,7 @@ private extension WelcomeViewController {
         }
         
         viewModel.didUpdateName = { [weak self] name in
-            self?.userNameTextField.text = name
+            self?.usernameTextField.text = name
         }
     }
 }

@@ -14,6 +14,8 @@ final class ScenesRepositoryImplementation: ScenesRepository {
     private(set) lazy var maxChoicesCount = scenes.reduce(Int.min) { max($0, $1.choices.count) }
     private(set) lazy var minChoicesCount = scenes.reduce(Int.max) { min($0, $1.choices.count) }
     
+    private var scenesLoadedError: ScenesRepositoryError?
+    
     init() {
         loadScenes()
     }
@@ -27,33 +29,47 @@ final class ScenesRepositoryImplementation: ScenesRepository {
     }
     
     func getScene(for sceneId: Int, completion: (Result<Scene, ScenesRepositoryError>) -> Void) {
-        if let scene = scenes.first(where: { $0.id == sceneId }) {
+        if let scenesLoadedError = scenesLoadedError {
+            completion(.failure(scenesLoadedError))
+        } else if let scene = scenes.first(where: { $0.id == sceneId }) {
             completion(.success(scene))
         } else {
-            completion(.failure(ScenesRepositoryError.failedReceiptScene))
+            completion(.failure(ScenesRepositoryError.failedToReceiveScene))
         }
     }
     
-    func updateWelcomeScene(with sceneId: Int, userName: String?) {
+    func updateWelcomeScene(with sceneId: Int, username: String?) {
         guard let indexScene = scenes.firstIndex(where: { $0.id == sceneId }) else { return }
-        guard let newUserName = userName?.trimmingCharacters(in: .whitespaces) else { return }
+        guard let newUsername = username?.trimmingCharacters(in: .whitespaces) else { return }
         
         var scene = scenes[indexScene]
-        scene.prompt = scene.prompt.replacingOccurrences(of: scene.userName ?? "unknown", with: newUserName)
-        scene.userName = newUserName
+        scene.prompt = scene.prompt.replacingOccurrences(of: scene.username ?? "unknown", with: newUsername)
+        scene.username = newUsername
         scenes[indexScene] = scene
     }
     
     private func loadScenes() {
         let languagePrefix = Locale.preferredLanguages[0].prefix(2)
-        guard let path = getJsonFilePath(jsonFileName: "scenes_\(languagePrefix)") else { return }
         
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let result = try JSONDecoder().decode(SceneResponse.self, from: data)
+            guard let path = getJsonFilePath(jsonFileName: "scenes_\(languagePrefix)") else {
+                throw ScenesRepositoryError.failedToGetFilePath
+            }
+            
+            guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+                throw ScenesRepositoryError.failedToGetData
+            }
+            
+            guard let result = try? JSONDecoder().decode(SceneResponse.self, from: data) else {
+                throw ScenesRepositoryError.failedToParseData
+            }
+            
             scenes = result.scenes.map { $0.toScene() }
+            
+        } catch let error as ScenesRepositoryError {
+            scenesLoadedError = error
         } catch {
-            print(ScenesRepositoryError.failedLoadData)
+            print("Unknown error occurred")
         }
     }
     

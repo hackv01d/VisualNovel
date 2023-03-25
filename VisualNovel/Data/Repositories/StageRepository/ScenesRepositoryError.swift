@@ -8,14 +8,21 @@
 import Foundation
 
 enum ScenesRepositoryError: Error {
-    case failedLoadData, failedReceiptScene
+    case failedToGetFilePath
+    case failedToGetData
+    case failedToParseData
+    case failedToReceiveScene
     
     var description: String {
         switch self {
-        case .failedLoadData:
-            return "Failed load data"
-        case .failedReceiptScene:
-            return "Failed receipt scene"
+        case .failedToGetFilePath:
+            return LocalizedStrings.failedToGetFilePath()
+        case .failedToGetData:
+            return LocalizedStrings.failedToGetData()
+        case .failedToParseData:
+            return LocalizedStrings.failedToParseData()
+        case .failedToReceiveScene:
+            return LocalizedStrings.failedToReceiveScene()
         }
     }
 }

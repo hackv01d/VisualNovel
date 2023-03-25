@@ -29,10 +29,17 @@ final class MainCoordinator: BaseCoordinator {
         sceneType == .start ? showStartMainScene() : showLastMainScene()
     }
     
+    private func showErrorAlert(with message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        navigationController.present(alertController, animated: true)
+    }
+    
     private func selectScene(_ scene: SceneType, sceneId: Int) {
         switch scene {
         case .main(let type):
             mainViewModel.updateData(sceneId: sceneId)
+            
             if type == .start {
                 resetCoordinatorCycle()
                 showStartMainScene()
@@ -42,7 +49,6 @@ final class MainCoordinator: BaseCoordinator {
             
         case .welcome:
             showWelcomeScene(with: sceneId)
-            
         case .game:
             return
         }

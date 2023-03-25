@@ -13,6 +13,7 @@ final class MainViewModel {
     var didUpdateHeader: ((String?) -> Void)?
     var didUpdateChoice: ((String?) -> Void)?
     var didGoToNextScene: ((SceneType, Int) -> Void)?
+    var showError: ((String) -> Void)?
     
     private let factory: Factory
     private lazy var scenesRepository = factory.makeScenesRepository()
