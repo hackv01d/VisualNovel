@@ -85,7 +85,7 @@ class GameViewController: UIViewController {
         
         choicesStackView.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(Constants.ChoicesStackView.ratioHeight)
-            make.width.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
@@ -101,7 +101,7 @@ class GameViewController: UIViewController {
         
         promptLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.PromptLabel.height)
-            make.width.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(choicesStackView.snp.top)
         }
     }

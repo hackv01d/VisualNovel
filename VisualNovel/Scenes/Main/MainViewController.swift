@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
         headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(view.bounds.height * Constants.HeaderLabel.ratioTop)
             make.height.equalToSuperview().multipliedBy(Constants.HeaderLabel.ratioHeight)
-            make.width.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
     
@@ -82,7 +82,7 @@ class MainViewController: UIViewController {
         
         continueLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.ContinueLabel.height)
-            make.width.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(headerLabel.snp.bottom).offset(view.bounds.height * Constants.ContinueLabel.ratioTop)
         }
     }

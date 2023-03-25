@@ -11,27 +11,34 @@ import SnapKit
 class WelcomeViewController: UIViewController {
     
     private enum Constants {
+            enum ContentView {
+                static let ratioHeight: CGFloat = 0.38
+            }
+        
             enum PromptLabel {
                 static let height: CGFloat = 50
-                static let insetBottom: CGFloat = -50
+                static let insetBottom: CGFloat = -25
             }
             
             enum UserNameTextField {
-                static let height: CGFloat = 70
-                static let insetBottom: CGFloat = -30
+                static let ratioHeight: CGFloat = 0.23
+                static let insetBottom: CGFloat = -37
                 static let editModeInset: CGFloat = 20
             }
             
             enum ConfirmLabel {
                 static let height: CGFloat = 50
-                static let insetBottom: CGFloat = 120
+                static let ratioInsetBottom: CGFloat = 0.67
             }
     }
     
+    private var contentView = UIView()
     private let userNameTextField = UITextField()
     private let promptLabel = DialogueLabel(style: .prompt)
     private let confirmLabel = DialogueLabel(style: .prompt)
+    
     private var userNameTextFieldBottomConstraint: Constraint?
+    private var promptLabelKeyboardBottomConstraint: Constraint?
     
     private var viewModel: WelcomeViewModelType
     
@@ -73,6 +80,7 @@ class WelcomeViewController: UIViewController {
     
     @objc
     private func keyboardWillHide() {
+        promptLabelKeyboardBottomConstraint?.update(priority: .low)
         userNameTextFieldBottomConstraint?.update(offset: Constants.UserNameTextField.insetBottom)
         animate(with: .transitionCurlDown)
     }
@@ -80,23 +88,25 @@ class WelcomeViewController: UIViewController {
     @objc
     private func keyboardWillShow(_ notification: Notification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-
+        
         let keyboardHeight = keyboardFrame.height
-        let lowerSpace = view.bounds.height - confirmLabel.frame.minY
-        let updatedOffset = lowerSpace - keyboardHeight - Constants.UserNameTextField.editModeInset
-
+        let lowerSpace = contentView.frame.height - confirmLabel.frame.minY - Constants.UserNameTextField.editModeInset
+        let updatedOffset = lowerSpace - keyboardHeight
+        
+        promptLabelKeyboardBottomConstraint?.update(priority: .high)
         userNameTextFieldBottomConstraint?.update(offset: updatedOffset)
         animate(with: .transitionCurlUp)
     }
     
     private func animate(with option: UIView.AnimationOptions) {
-        UIView.animate(withDuration: 0.4, delay: 0,  options: [option]) {
+        UIView.animate(withDuration: 0.33, delay: 0,  options: [option]) {
             self.view.layoutIfNeeded()
         }
     }
-
+    
     private func setup() {
         setupSuperView()
+        setupContentView()
         setupConfirmLabel()
         setupUserNameTextField()
         setupPromptLabel()
@@ -107,18 +117,31 @@ class WelcomeViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    private func setupContentView() {
+        view.addSubview(contentView)
+        
+        contentView.backgroundColor = .clear
+        contentView.clipsToBounds = false
+        
+        contentView.snp.makeConstraints { make in
+            make.height.equalToSuperview().multipliedBy(Constants.ContentView.ratioHeight)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
     private func setupConfirmLabel() {
-        view.addSubview(confirmLabel)
+        contentView.addSubview(confirmLabel)
         
         confirmLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.ConfirmLabel.height)
-            make.width.equalToSuperview()
-            make.bottom.equalToSuperview().inset(Constants.ConfirmLabel.insetBottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().multipliedBy(Constants.ConfirmLabel.ratioInsetBottom)
         }
     }
     
     private func setupUserNameTextField() {
-        view.addSubview(userNameTextField)
+        contentView.addSubview(userNameTextField)
         
         userNameTextField.font = .userNameText
         userNameTextField.leftPadding(17)
@@ -130,11 +153,11 @@ class WelcomeViewController: UIViewController {
         userNameTextField.delegate = self
 
         userNameTextField.snp.makeConstraints { make in
-            make.height.equalTo(Constants.UserNameTextField.height)
-            make.width.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(Constants.UserNameTextField.ratioHeight)
+            make.leading.trailing.equalToSuperview()
             userNameTextFieldBottomConstraint = make.bottom.equalTo(confirmLabel.snp.top)
-                                                            .offset(Constants.UserNameTextField.insetBottom)
-                                                            .constraint
+                                                           .offset(Constants.UserNameTextField.insetBottom)
+                                                           .constraint
         }
     }
     
@@ -143,8 +166,11 @@ class WelcomeViewController: UIViewController {
         
         promptLabel.snp.makeConstraints { make in
             make.height.equalTo(Constants.PromptLabel.height)
-            make.width.equalToSuperview()
-            make.bottom.equalTo(userNameTextField.snp.top).offset(Constants.PromptLabel.insetBottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(contentView.snp.top).priority(.medium)
+            promptLabelKeyboardBottomConstraint = make.bottom.equalTo(userNameTextField.snp.top)
+                                                             .offset(Constants.PromptLabel.insetBottom)
+                                                             .priority(.low).constraint
         }
     }
     
