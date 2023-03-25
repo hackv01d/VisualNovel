@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: BaseViewController {
     
     private enum Constants {
             enum ContentView {
@@ -105,7 +105,6 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setup() {
-        setupSuperView()
         setupContentView()
         setupConfirmLabel()
         setupUsernameTextField()
@@ -113,16 +112,10 @@ class WelcomeViewController: UIViewController {
         setupConfirmLabelTapGesture()
     }
     
-    private func setupSuperView() {
-        view.backgroundColor = .white
-    }
-    
     private func setupContentView() {
         view.addSubview(contentView)
         
         contentView.backgroundColor = .clear
-        contentView.clipsToBounds = false
-        
         contentView.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(Constants.ContentView.ratioHeight)
             make.leading.trailing.equalToSuperview()
@@ -141,7 +134,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setupUsernameTextField() {
-        contentView.addSubview(usernameTextField)
+        view.addSubview(usernameTextField)
         
         usernameTextField.font = .usernameText
         usernameTextField.leftPadding(17)
@@ -153,7 +146,7 @@ class WelcomeViewController: UIViewController {
         usernameTextField.delegate = self
 
         usernameTextField.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(Constants.UsernameTextField.ratioHeight)
+            make.height.equalTo(contentView).multipliedBy(Constants.UsernameTextField.ratioHeight)
             make.leading.trailing.equalToSuperview()
             usernameTextFieldBottomConstraint = make.bottom.equalTo(confirmLabel.snp.top)
                                                            .offset(Constants.UsernameTextField.insetBottom)
@@ -207,16 +200,20 @@ extension WelcomeViewController: UITextFieldDelegate {
 
 private extension WelcomeViewController {
     func bindViewModel() {
-        viewModel.didUpdatePrompt = { [weak self] textPrompt in
-            self?.promptLabel.text = textPrompt
+        viewModel.didUpdateName = { [weak self] name in
+            self?.usernameTextField.text = name
         }
         
         viewModel.didUpdateChoice = { [weak self] title in
             self?.confirmLabel.text = title
         }
         
-        viewModel.didUpdateName = { [weak self] name in
-            self?.usernameTextField.text = name
+        viewModel.didUpdatePrompt = { [weak self] textPrompt in
+            self?.promptLabel.text = textPrompt
+        }
+    
+        viewModel.didUpdateBackground = { [weak self] imageName in
+            self?.setBackgroundImage(named: imageName)
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol GameViewModelType {
     var didUpdatePrompt: ((String?) -> Void)? { get set }
+    var didUpdateBackground: ((String) -> Void)? { get set }
     var didUpdateChoice: ((DialogueLabelStyle, String?, Int) -> Void)? { get set }
     
     func getSceneDetail()

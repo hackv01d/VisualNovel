@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     
     private let promptLabel = UILabel()
     private let choicesStackView = UIStackView()
@@ -63,13 +63,8 @@ class GameViewController: UIViewController {
     }
     
     private func setup() {
-        setupSuperView()
         setupChoicesStackView()
         setupPromptLabel()
-    }
-    
-    private func setupSuperView() {
-        view.backgroundColor = .white
     }
     
     private func setupChoicesStackView() {
@@ -115,6 +110,10 @@ private extension GameViewController {
         
         viewModel.didUpdateChoice = { [weak self] style, text, tag in
             self?.makeChoiceLabel(style: style, text: text, tag: tag)
+        }
+        
+        viewModel.didUpdateBackground = { [weak self] imageName in
+            self?.setBackgroundImage(named: imageName)
         }
     }
 }

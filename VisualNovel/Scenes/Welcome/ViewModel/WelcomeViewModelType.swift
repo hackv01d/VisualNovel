@@ -10,9 +10,10 @@ import Foundation
 protocol WelcomeViewModelType {
     var placeholder: String { get }
     
-    var didUpdatePrompt: ((String?) -> Void)? { get set }
-    var didUpdateChoice: ((String?) -> Void)? { get set }
     var didUpdateName: ((String) -> Void)? { get set }
+    var didUpdateChoice: ((String?) -> Void)? { get set }
+    var didUpdatePrompt: ((String?) -> Void)? { get set }
+    var didUpdateBackground: ((String) -> Void)? { get set }
     
     func getSceneDetail()
     func checkLengthValid(_ name: String?)

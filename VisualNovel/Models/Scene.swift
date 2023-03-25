@@ -10,6 +10,7 @@ import Foundation
 struct Scene {
     let id: Int
     var prompt: String
+    let imageName: String
     let choices: [Choice]
     var username: String?
 }

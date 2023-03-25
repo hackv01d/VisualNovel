@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     
     private enum Constants {
             enum HeaderLabel {
@@ -51,14 +51,9 @@ class MainViewController: UIViewController {
     }
     
     private func setup() {
-        setupSuperView()
         setupHeaderLabel()
         setupContinueLabel()
         setupContinueLabelTapGesture()
-    }
-    
-    private func setupSuperView() {
-        view.backgroundColor = .white
     }
     
     private func setupHeaderLabel() {
@@ -96,12 +91,16 @@ class MainViewController: UIViewController {
 
 private extension MainViewController {
     func bindViewModel() {
+        viewModel.didUpdateChoice = { [weak self] text in
+            self?.continueLabel.text = text
+        }
+        
         viewModel.didUpdateHeader = { [weak self] header in
             self?.headerLabel.text = header
         }
-        
-        viewModel.didUpdateChoice = { [weak self] text in
-            self?.continueLabel.text = text
+
+        viewModel.didUpdateBackground = { [weak self] imageName in
+            self?.setBackgroundImage(named: imageName)
         }
     }
 }

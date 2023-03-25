@@ -13,7 +13,7 @@ extension String {
     }
     
     var isLengthValid: Bool {
-        count < 40
+        count < 33
     }
     
     func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {

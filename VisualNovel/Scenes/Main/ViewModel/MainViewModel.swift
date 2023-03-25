@@ -12,6 +12,7 @@ final class MainViewModel {
     
     var didUpdateHeader: ((String?) -> Void)?
     var didUpdateChoice: ((String?) -> Void)?
+    var didUpdateBackground: ((String) -> Void)?
     
     var showError: ((String) -> Void)?
     var didGoToNextScene: ((SceneType, Int) -> Void)?
@@ -55,8 +56,11 @@ private extension MainViewModel {
     }
     
     func updateDetail() {
-        didUpdateHeader?(scene?.prompt)
-        didUpdateChoice?(scene?.choices.first?.title)
+        guard let scene = scene else { return }
+        
+        didUpdateBackground?(scene.imageName)
+        didUpdateHeader?(scene.prompt)
+        didUpdateChoice?(scene.choices.first?.title)
     }
     
     func loadScene() {

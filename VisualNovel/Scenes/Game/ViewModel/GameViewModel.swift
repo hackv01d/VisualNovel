@@ -11,6 +11,7 @@ final class GameViewModel {
     typealias Factory = ScenesRepositoryFactory
     
     var didUpdatePrompt: ((String?) -> Void)?
+    var didUpdateBackground: ((String) -> Void)?
     var didUpdateChoice: ((DialogueLabelStyle, String?, Int) -> Void)?
     
     var showError: ((String) -> Void)?
@@ -57,6 +58,7 @@ private extension GameViewModel {
     func updateDetail() {
         guard let scene = scene else { return }
         
+        didUpdateBackground?(scene.imageName)
         didUpdatePrompt?(scene.prompt)
         
         let choices = scene.choices

@@ -10,9 +10,10 @@ import Foundation
 final class WelcomeViewModel {
     typealias Factory = ScenesRepositoryFactory
     
-    var didUpdatePrompt: ((String?) -> Void)?
-    var didUpdateChoice: ((String?) -> Void)?
     var didUpdateName: ((String) -> Void)?
+    var didUpdateChoice: ((String?) -> Void)?
+    var didUpdatePrompt: ((String?) -> Void)?
+    var didUpdateBackground: ((String) -> Void)?
     
     var showError: ((String) -> Void)?
     var didGoToGameScene: ((Int) -> Void)?
@@ -54,14 +55,16 @@ extension WelcomeViewModel: WelcomeViewModelType {
         
         name.removeLast()
         didUpdateName?(name)
-        return
     }
 }
 
 private extension WelcomeViewModel {
     func updateDetail() {
-        didUpdatePrompt?(scene?.prompt)
-        didUpdateChoice?(scene?.choices.first?.title)
+        guard let scene = scene else { return }
+        
+        didUpdateBackground?(scene.imageName)
+        didUpdatePrompt?(scene.prompt)
+        didUpdateChoice?(scene.choices.first?.title)
     }
     
     func loadScene() {
