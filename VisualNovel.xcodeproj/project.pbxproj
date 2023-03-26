@@ -182,7 +182,7 @@
 		49375DA329C6F97A00511526 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				49375DB029C7068900511526 /* StageRepository */,
+				49375DB029C7068900511526 /* ScenesRepository */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -204,14 +204,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		49375DB029C7068900511526 /* StageRepository */ = {
+		49375DB029C7068900511526 /* ScenesRepository */ = {
 			isa = PBXGroup;
 			children = (
 				49375DAE29C7067200511526 /* ScenesRepositoryImpl.swift */,
 				49375DB129C706A500511526 /* ScenesRepository.swift */,
 				490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */,
 			);
-			path = StageRepository;
+			path = ScenesRepository;
 			sourceTree = "<group>";
 		};
 		49375DB329C7184500511526 /* DI */ = {

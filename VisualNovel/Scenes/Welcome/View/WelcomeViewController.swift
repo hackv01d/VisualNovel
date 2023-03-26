@@ -21,8 +21,9 @@ class WelcomeViewController: BaseViewController {
             }
             
             enum UsernameTextField {
-                static let ratioHeight: CGFloat = 0.23
+                static let leftPadding: CGFloat = 17
                 static let insetBottom: CGFloat = -37
+                static let ratioHeight: CGFloat = 0.23
                 static let editModeInset: CGFloat = 20
             }
             
@@ -137,7 +138,7 @@ class WelcomeViewController: BaseViewController {
         view.addSubview(usernameTextField)
         
         usernameTextField.font = .usernameText
-        usernameTextField.leftPadding(17)
+        usernameTextField.leftPadding(Constants.UsernameTextField.leftPadding)
         usernameTextField.tintColor = .choiceLabel
         usernameTextField.textColor = .usernameText
         usernameTextField.placeholder = viewModel.placeholder

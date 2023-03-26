@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 final class DependencyContainer {
-    private lazy var ScenesRepository = ScenesRepositoryImplementation()
+    private lazy var scenesRepository = ScenesRepositoryImplementation()
 }
 
 // MARK: - ScenesRepositoryFactory
 
 extension DependencyContainer: ScenesRepositoryFactory {
     func makeScenesRepository() -> ScenesRepository {
-        return ScenesRepository
+        return scenesRepository
     }
 }
 

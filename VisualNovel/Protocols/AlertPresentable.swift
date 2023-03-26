@@ -1,5 +1,5 @@
 //
-//  AlertCoordinable.swift
+//  AlertPresentable.swift
 //  VisualNovel
 //
 //  Created by Ivan Semenov on 25.03.2023.

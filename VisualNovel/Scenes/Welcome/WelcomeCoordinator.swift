@@ -33,7 +33,8 @@ final class WelcomeCoordinator: BaseCoordinator, AlertPresentable {
 
 private extension WelcomeCoordinator {
     func showGameScene(with sceneId: Int) {
-        let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController, sceneId: sceneId)
+        let gameCoordinator = factory.makeGameCoordinator(navigationController: navigationController,
+                                                          sceneId: sceneId)
         coordinate(to: gameCoordinator)
     }
 }
