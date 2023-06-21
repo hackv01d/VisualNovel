@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DialogueLabel: UILabel {
+final class DialogueLabel: UILabel {
     
     init(style: DialogueLabelStyle) {
         super.init(frame: .zero)

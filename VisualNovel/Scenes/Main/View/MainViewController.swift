@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-class MainViewController: BaseViewController {
+final class MainViewController: BaseViewController {
     
     private enum Constants {
+        
             enum HeaderLabel {
                 static let ratioTop: CGFloat = 0.25
                 static let ratioHeight: CGFloat = 0.2
@@ -21,6 +22,7 @@ class MainViewController: BaseViewController {
                 static let height: CGFloat = 50
                 static let ratioTop: CGFloat = 0.25
             }
+        
     }
     
     private let headerLabel = UILabel()

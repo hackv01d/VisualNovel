@@ -15,7 +15,12 @@ final class MainCoordinator: BaseCoordinator, AlertPresentable {
     private var mainViewModel: MainViewModel
     private let sceneType: MainSceneType
     
-    init(navigationController: UINavigationController, factory: Factory, sceneId: Int, sceneType: MainSceneType) {
+    init(
+        navigationController: UINavigationController,
+        factory: Factory,
+        sceneId: Int,
+        sceneType: MainSceneType
+    ) {
         self.factory = factory
         self.sceneType = sceneType
         mainViewModel = factory.makeMainViewModel(sceneId: sceneId)
@@ -77,7 +82,9 @@ private extension MainCoordinator {
     }
     
     func showWelcomeScene(with sceneId: Int) {
-        let welcomeCoordinator = factory.makeWelcomeCoordinator(navigationController: navigationController, sceneId: sceneId)
+        let welcomeCoordinator = factory.makeWelcomeCoordinator(
+            navigationController: navigationController,
+            sceneId: sceneId)
         coordinate(to: welcomeCoordinator)
     }
 }

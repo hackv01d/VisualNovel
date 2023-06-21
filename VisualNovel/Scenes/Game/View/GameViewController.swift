@@ -7,12 +7,10 @@
 
 import UIKit
 
-class GameViewController: BaseViewController {
-    
-    private let promptLabel = UILabel()
-    private let choicesStackView = UIStackView()
+final class GameViewController: BaseViewController {
     
     private enum Constants {
+        
         enum PromptLabel {
             static let height: CGFloat = 50
             static let insetBottom: CGFloat = 25
@@ -24,7 +22,11 @@ class GameViewController: BaseViewController {
             static let marginBottom: CGFloat = 17
             static let ratioHeight: CGFloat = 0.38
         }
+        
     }
+    
+    private let promptLabel = UILabel()
+    private let choicesStackView = UIStackView()
 
     private var viewModel: GameViewModelType
     

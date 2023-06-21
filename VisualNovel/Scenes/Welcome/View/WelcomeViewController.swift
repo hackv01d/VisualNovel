@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-class WelcomeViewController: BaseViewController {
+final class WelcomeViewController: BaseViewController {
     
     private enum Constants {
+        
             enum ContentView {
                 static let ratioHeight: CGFloat = 0.38
             }
@@ -31,6 +32,7 @@ class WelcomeViewController: BaseViewController {
                 static let height: CGFloat = 50
                 static let ratioInsetBottom: CGFloat = 0.67
             }
+        
     }
     
     private var contentView = UIView()
