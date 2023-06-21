@@ -14,6 +14,7 @@
 		490CDA7229C74E03006C736D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */; };
 		490CDA7429C74E11006C736D /* WelcomeViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7329C74E11006C736D /* WelcomeViewModelType.swift */; };
 		490CDA7629C7677A006C736D /* ScenesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */; };
+		492B43FF2A42CB9D00ABA150 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 492B43FE2A42CB9D00ABA150 /* README.md */; };
 		49375D8D29C6EB7C00511526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8C29C6EB7C00511526 /* AppDelegate.swift */; };
 		49375D8F29C6EB7C00511526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49375D8E29C6EB7C00511526 /* SceneDelegate.swift */; };
 		49375D9629C6EB7E00511526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49375D9529C6EB7E00511526 /* Assets.xcassets */; };
@@ -59,6 +60,8 @@
 		490CDA7129C74E03006C736D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		490CDA7329C74E11006C736D /* WelcomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelType.swift; sourceTree = "<group>"; };
 		490CDA7529C7677A006C736D /* ScenesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesRepositoryError.swift; sourceTree = "<group>"; };
+		492B43FD2A42CB7100ABA150 /* visual-novel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-novel.png"; sourceTree = "<group>"; };
+		492B43FE2A42CB9D00ABA150 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49375D8929C6EB7C00511526 /* VisualNovel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualNovel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49375D8C29C6EB7C00511526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49375D8E29C6EB7C00511526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,9 +126,19 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		492B43FC2A42CB5400ABA150 /* IMG */ = {
+			isa = PBXGroup;
+			children = (
+				492B43FD2A42CB7100ABA150 /* visual-novel.png */,
+			);
+			path = IMG;
+			sourceTree = "<group>";
+		};
 		49375D8029C6EB7C00511526 = {
 			isa = PBXGroup;
 			children = (
+				492B43FE2A42CB9D00ABA150 /* README.md */,
+				492B43FC2A42CB5400ABA150 /* IMG */,
 				49375D8B29C6EB7C00511526 /* VisualNovel */,
 				49375D8A29C6EB7C00511526 /* Products */,
 			);
@@ -452,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492B43FF2A42CB9D00ABA150 /* README.md in Resources */,
 				497A0D7F29CEFFE700BCAF78 /* Localizable.strings in Resources */,
 				49375D9929C6EB7E00511526 /* LaunchScreen.storyboard in Resources */,
 				497A0D7629CEF67200BCAF78 /* scenes_en.json in Resources */,
