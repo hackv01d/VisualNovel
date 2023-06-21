@@ -1,0 +1,190 @@
+{
+    "scenes": [
+        {
+            "id": 1,
+            "prompt": "Моя визуальная новелла",
+            "image_name": "scene_background_1",
+            "choices": [
+                {
+                    "id": 2,
+                    "title": "Начать"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "prompt": "Привет! Меня зовут Кирюша. А тебя?",
+            "image_name": "scene_background_2",
+            "choices": [
+                {
+                    "id": 3,
+                    "title": "Подтвердить"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "prompt": "Отлично, unknown! Чем займемся?",
+            "image_name": "scene_background_3",
+            "choices": [
+                {
+                    "id": 4,
+                    "title": "Пойдем на пробежку"
+                },
+                {
+                    "id": 5,
+                    "title": "Пойдем в поход"
+                },
+                {
+                    "id": 6,
+                    "title": "Погуляем по полю"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "prompt": "Может, пойдем домой?...",
+            "image_name": "scene_background_4",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Да, и посмотрим фильм"
+                },
+                {
+                    "id": 8,
+                    "title": "Да, и отпразднуем хэллоуин"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "prompt": "Как уютно... Но уже темнеет.",
+            "image_name": "scene_background_5",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Пойдем домой и посмотрим фильм"
+                },
+                {
+                    "id": 8,
+                    "title": "Пойдем домой и отпразднуем Хэллоуин"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "prompt": "Тебе грустно... Пойдем домой?",
+            "image_name": "scene_background_6",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Может, посмотрим фильм?"
+                },
+                {
+                    "id": 8,
+                    "title": "Да, отпразднуем Хэллоуин"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "prompt": "Как тебе фильм?",
+            "image_name": "scene_background_7",
+            "choices": [
+                {
+                    "id": 9,
+                    "title": "Мне понравился!"
+                },
+                {
+                    "id": 10,
+                    "title": "Не очень..."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "prompt": "Получается очень красиво!",
+            "image_name": "scene_background_8",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Да! Может, посмотрим фильм?"
+                },
+                {
+                    "id": 11,
+                    "title": "Да! Давай сделаем костюмы!"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "prompt": "Отлично! А теперь пора спать...",
+            "image_name": "scene_background_9",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Да, уже поздно..."
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "prompt": "Жаль... Тогда пойдем спать?",
+            "image_name": "scene_background_10",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Да, уже поздно..."
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "prompt": "Мне нравится твой костюм.",
+            "image_name": "scene_background_11",
+            "choices": [
+                {
+                    "id": 12,
+                    "title": "Твой тоже очень красивый!"
+                },
+                {
+                    "id": 13,
+                    "title": "А мне, если честно, не нравится твой..."
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "prompt": "Спасибо! Ну, пойдем спать?",
+            "image_name": "scene_background_12",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Да, уже поздно..."
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "prompt": "Ничего, я не в обиде. Пойдем спать?",
+            "image_name": "scene_background_13",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Да, уже поздно..."
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "prompt": "Спасибо, что поиграли!",
+            "image_name": "scene_background_14",
+            "choices": [
+                {
+                    "id": 1,
+                    "title": "Пройти еще раз"
+                }
+            ]
+        }
+    ]
+}

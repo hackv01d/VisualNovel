@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  VisualNovel
+
+  Created by Ivan Semenov on 25.03.2023.
+  
+*/
+
+"usernamePlaceholder" = "Введите свое имя...";
+
+"error" = "Ошибка";
+"failedToGetFilePath" = "Не удалось получить доступ к файлу.";
+"failedToGetData" = "Не удалось получить данные из файла.";
+"failedToParseData" = "Произошла ошибка при обработке данных.";
+"failedToReceiveScene" = "Не удалось загрузить данные для текущей сцены.";
+

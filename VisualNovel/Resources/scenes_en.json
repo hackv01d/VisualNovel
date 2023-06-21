@@ -1,0 +1,192 @@
+{
+    "scenes": [
+        {
+            "id": 1,
+            "prompt": "My Visual Novel",
+            "image_name": "scene_background_1",
+            "choices": [
+                {
+                    "id": 2,
+                    "title": "Start"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "prompt": "Hi! My name is Kiryusha. What's yours?",
+            "image_name": "scene_background_2",
+            "choices": [
+                {
+                    "id": 3,
+                    "title": "Confirm"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "prompt": "Great, unknown! What shall we do?",
+            "image_name": "scene_background_3",
+            "choices": [
+                {
+                    "id": 4,
+                    "title": "Go for a run"
+                },
+                {
+                    "id": 5,
+                    "title": "Go for a hike"
+                },
+                {
+                    "id": 6,
+                    "title": "Take a walk in the field"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "prompt": "Maybe let's go home?...",
+            "image_name": "scene_background_4",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Yes, and watch a movie"
+                },
+                {
+                    "id": 8,
+                    "title": "Yes, and celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "prompt": "How cozy... But it's getting dark already.",
+            "image_name": "scene_background_5",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Let's go home and watch a movie"
+                },
+                {
+                    "id": 8,
+                    "title": "Let's go home and celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "prompt": "You seem sad... Let's go home?",
+            "image_name": "scene_background_6",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Maybe watch a movie?"
+                },
+                {
+                    "id": 8,
+                    "title": "Yes, let's celebrate Halloween"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "prompt": "How was the movie?",
+            "image_name": "scene_background_7",
+            "choices": [
+                {
+                    "id": 9,
+                    "title": "I liked it!"
+                },
+                {
+                    "id": 10,
+                    "title": "Not really..."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "prompt": "It turned out very beautiful!",
+            "image_name": "scene_background_8",
+            "choices": [
+                {
+                    "id": 7,
+                    "title": "Yes! Maybe watch a movie?"
+                },
+                {
+                    "id": 11,
+                    "title": "Yes! Let's make costumes!"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "prompt": "Great! And now it's time to sleep...",
+            "image_name": "scene_background_9",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Yes, it's late..."
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "prompt": "Too bad... Shall we go to sleep then?",
+            "image_name": "scene_background_10",
+            "choices": [
+                {
+                    "id": 14,
+                    "title": "Yes, it's late..."
+                }
+            ]
+        },
+        {
+             "id": 11,
+             "prompt": "I like your suit.",
+             "image_name": "scene_background_11",
+             "choices": [
+                 {
+                     "id": 12,
+                     "title": "Yours is very nice too!"
+                 },
+                 {
+                     "id": 13,
+                     "title": "Honestly, I don't really like yours..."
+                 }
+             ]
+         },
+         {
+             "id": 12,
+             "prompt": "Thanks! So, shall we go to bed?",
+             "image_name": "scene_background_12",
+             "choices": [
+                 {
+                     "id": 14,
+                     "title": "Yes, it's late already..."
+                 }
+             ]
+         },
+         {
+             "id": 13,
+             "prompt": "No worries, I'm not offended. Shall we go to bed?",
+             "image_name": "scene_background_13",
+             "choices": [
+                 {
+                     "id": 14,
+                     "title": "Yes, it's late already..."
+                 }
+             ]
+         },
+         {
+             "id": 14,
+             "prompt": "Thank you for playing!",
+             "image_name": "scene_background_14",
+             "choices": [
+                 {
+                     "id": 1,
+                     "title": "Play again"
+                 }
+             ]
+         }
+    ]
+}
+
+
